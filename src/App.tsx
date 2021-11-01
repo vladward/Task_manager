@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import TodoList from "./TodoList";
-import { v1 } from 'uuid';
+import {v1} from 'uuid';
 
 export type TaskType = {
     id: string
@@ -39,9 +39,8 @@ function App() {
         setFilter(filter)
     }
     const changeTaskStatus = (taskID: string, isDone: boolean) => {
-        setTasks(tasks.map( t => t.id === taskID ? {...t, isDone: isDone} : t))
+        setTasks(tasks.map(t => t.id === taskID ? {...t, isDone: isDone} : t))
     }
-
 
     let tasksForRender = tasks
     if (filter === "active") {
@@ -61,15 +60,8 @@ function App() {
                       filter={filter}
                       changeTaskStatus={changeTaskStatus}
             />
-            {/*<TodoList tasks={tasksForRender}*/}
-            {/*          title={"What to buy"}*/}
-            {/*          removeTask={removeTask}*/}
-            {/*          changeFilter={changeFilter}*/}
-            {/*          addTask={addTask}*/}
-            {/*          filter={filter}*/}
-            {/*/>*/}
         </div>
     );
 }
 
-    export default App;
+export default App;

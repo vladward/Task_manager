@@ -15,11 +15,10 @@ export type TodoListPropsType = {
 const TodoList = (props: TodoListPropsType) => {
 
     const [title, setTitle] = useState<string>("")
+    const [error, setError] = useState<boolean>(false)
     const createTask = () => {
-        if (title) {
-            props.addTask(title)
-            setTitle("")
-        }
+        title.trim() !== '' ? props.addTask(title.trim()) : setError(true)
+        setTitle("")
     }
     const setAll = () => {
         return props.changeFilter("all")
@@ -30,9 +29,14 @@ const TodoList = (props: TodoListPropsType) => {
     const setActive = () => {
         return props.changeFilter("active")
     }
-    const onChangeTitle = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.currentTarget.value)
+    const onChangeTitle = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.currentTarget.value) {
+            setError(false)
+        }
+        setTitle(e.currentTarget.value)
+    }
     const onKeyPressEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-        if(e.key === "Enter") {
+        if (e.key === "Enter") {
             createTask()
         }
     }
@@ -54,7 +58,7 @@ const TodoList = (props: TodoListPropsType) => {
                 key={t.id}>
                 <input type="checkbox"
                        checked={t.isDone}
-                onChange={onChangeTaskStatus}
+                       onChange={onChangeTaskStatus}
                 />
                 <span>{t.title}</span>
                 <button onClick={removeTaskById}>
@@ -68,12 +72,13 @@ const TodoList = (props: TodoListPropsType) => {
         <div className="todolist">
             <h3>{props.title}</h3>
             <div>
-                <input placeholder="Enter you'r task"
+                <input className={error ? "error" : ''}
+                       placeholder="Enter you'r task"
                        onChange={onChangeTitle}
                        value={title}
                        onKeyPress={onKeyPressEnter}
                 />
-                <button onClick={createTask}>+</button>
+                <button onClick={createTask} disabled={error}>+</button>
             </div>
             {liJsxElements}
             <div>
