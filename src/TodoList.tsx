@@ -50,7 +50,8 @@ const TodoList = (props: TodoListPropsType) => {
             props.changeTaskStatus(t.id, e.currentTarget.checked)
         }
         return (
-            <li key={t.id}>
+            <li className={t.isDone ? "done-task" : ''}
+                key={t.id}>
                 <input type="checkbox"
                        checked={t.isDone}
                 onChange={onChangeTaskStatus}

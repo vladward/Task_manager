@@ -16,3 +16,7 @@
 .active-filter {
   background: cornflowerblue;
 }
+
+.done-task {
+  opacity: .5;
+}
