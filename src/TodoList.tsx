@@ -1,8 +1,10 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import {FilterValuesType, TaskType} from "./App";
 
+
 export type TodoListPropsType = {
     title: string
+    filter: FilterValuesType
     tasks: Array<TaskType>
     removeTask: (taskID: string) => void
     changeFilter: (filter: FilterValuesType) => void
@@ -34,6 +36,10 @@ const TodoList = (props: TodoListPropsType) => {
         }
     }
 
+    let allBtnClass = props.filter === 'all' ? "active-filter" : ""
+    let activeBtnClass = props.filter === 'active' ? "active-filter" : ""
+    let completedBtnClass = props.filter === 'completed' ? "active-filter" : ""
+
     const liJsxElements = props.tasks.map(t => {
         const removeTaskById = () => {
             props.removeTask(t.id)
@@ -62,9 +68,9 @@ const TodoList = (props: TodoListPropsType) => {
             </div>
             {liJsxElements}
             <div>
-                <button onClick={setAll}>All</button>
-                <button onClick={setActive}>Active</button>
-                <button onClick={setCompleted}>Completed</button>
+                <button className={allBtnClass} onClick={setAll}>All</button>
+                <button className={activeBtnClass} onClick={setActive}>Active</button>
+                <button className={completedBtnClass} onClick={setCompleted}>Completed</button>
             </div>
         </div>
     )

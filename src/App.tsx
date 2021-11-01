@@ -56,13 +56,15 @@ function App() {
                       removeTask={removeTask}
                       changeFilter={changeFilter}
                       addTask={addTask}
+                      filter={filter}
             />
-            <TodoList tasks={tasksForRender}
-                      title={"What to buy"}
-                      removeTask={removeTask}
-                      changeFilter={changeFilter}
-                      addTask={addTask}
-            />
+            {/*<TodoList tasks={tasksForRender}*/}
+            {/*          title={"What to buy"}*/}
+            {/*          removeTask={removeTask}*/}
+            {/*          changeFilter={changeFilter}*/}
+            {/*          addTask={addTask}*/}
+            {/*          filter={filter}*/}
+            {/*/>*/}
         </div>
     );
 }
