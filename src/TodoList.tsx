@@ -45,6 +45,9 @@ const TodoList = (props: TodoListPropsType) => {
     let allBtnClass = props.filter === 'all' ? "active-filter" : ""
     let activeBtnClass = props.filter === 'active' ? "active-filter" : ""
     let completedBtnClass = props.filter === 'completed' ? "active-filter" : ""
+    const errorMessage = error
+        ? <div style={{color: 'red'}}>Title is required</div>
+        : null
 
     const liJsxElements = props.tasks.map(t => {
         const removeTaskById = () => {
@@ -79,6 +82,7 @@ const TodoList = (props: TodoListPropsType) => {
                        onKeyPress={onKeyPressEnter}
                 />
                 <button onClick={createTask} disabled={error}>+</button>
+                {errorMessage}
             </div>
             {liJsxElements}
             <div>
