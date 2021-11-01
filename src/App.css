@@ -20,3 +20,8 @@
 .done-task {
   opacity: .5;
 }
+
+.error {
+  border: 2px solid red;
+  outline: none;
+}
