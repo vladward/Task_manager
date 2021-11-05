@@ -11,7 +11,6 @@ export type TaskType = {
 
 export type FilterValuesType = "all" | "active" | "completed"
 
-
 let tasksState = [
     {id: v1(), title: "HTML", isDone: true},
     {id: v1(), title: "CSS", isDone: true},
@@ -44,10 +43,10 @@ function App() {
 
     let tasksForRender = tasks
     if (filter === "active") {
-        tasksForRender = tasks.filter(t => t.isDone === false)
+        tasksForRender = tasks.filter(t => !t.isDone)
     }
     if (filter === "completed") {
-        tasksForRender = tasks.filter(t => t.isDone === true)
+        tasksForRender = tasks.filter(t => t.isDone)
     }
 
     return (
