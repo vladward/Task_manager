@@ -17,7 +17,7 @@ const TodoList = (props: TodoListPropsType) => {
     const [title, setTitle] = useState<string>("")
     const [error, setError] = useState<boolean>(false)
     const createTask = () => {
-        title.trim() !== '' ? props.addTask(title.trim()) : setError(true)
+        title.trim() !== '' ? props.addTask(title.trim(), props.id) : setError(true)
         setTitle("")
     }
     const setAll = () => {

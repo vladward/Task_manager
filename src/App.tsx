@@ -54,13 +54,16 @@ function App() {
             [todoListID]: tasks[todoListID].filter(t => t.id !== taskID)
         })
     }
-    const addTask = (title: string) => {
+    const addTask = (title: string, todoListID: string) => {
         const newTask: TaskType = {
             id: v1(),
             title: title,
             isDone: false
         }
-        setTasks([newTask, ...tasks])
+        setTasks({
+            ...tasks,
+            [todoListID]: [newTask, ...tasks[todoListID]]
+        })
     }
     const changeFilter = (filter: FilterValuesType) => {
         setFilter(filter)
