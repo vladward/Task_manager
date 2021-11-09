@@ -3,13 +3,15 @@ import {FilterValuesType, TaskType} from "./App";
 
 
 export type TodoListPropsType = {
+    id: string
     title: string
     filter: FilterValuesType
     tasks: Array<TaskType>
-    removeTask: (taskID: string) => void
-    changeFilter: (filter: FilterValuesType) => void
-    addTask: (title: string) => void
-    changeTaskStatus: (taskID: string, isDone: boolean) => void
+    removeTask: (taskID: string, todoListID: string) => void
+    changeFilter: (filter: FilterValuesType, todoListID: string) => void
+    addTask: (title: string, todoListID: string) => void
+    changeTaskStatus: (taskID: string, isDone: boolean, todoListID: string) => void
+    removeTodoList: (todoListID: string) => void
 }
 
 const TodoList = (props: TodoListPropsType) => {
@@ -54,7 +56,7 @@ const TodoList = (props: TodoListPropsType) => {
             props.removeTask(t.id, props.id)
         }
         const onChangeTaskStatus = (e: ChangeEvent<HTMLInputElement>) => {
-            props.changeTaskStatus(t.id, e.currentTarget.checked)
+            props.changeTaskStatus(t.id, e.currentTarget.checked, props.id)
         }
         return (
             <li className={t.isDone ? "done-task" : ''}
@@ -76,7 +78,7 @@ const TodoList = (props: TodoListPropsType) => {
             <h3>{props.title}</h3>
             <div>
                 <input className={error ? "error" : ''}
-                       placeholder="Enter you'r task"
+                       placeholder="Enter your task"
                        onChange={onChangeTitle}
                        value={title}
                        onKeyPress={onKeyPressEnter}
