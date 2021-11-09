@@ -9,6 +9,16 @@ export type TaskType = {
     isDone: boolean
 }
 
+export type TodoListType = {
+    id: string
+    title: string
+    filter: FilterValuesType
+}
+
+export type TasksStateType = {
+    [key: string]: Array<TaskType>
+}
+
 export type FilterValuesType = "all" | "active" | "completed"
 
 let tasksState = [
@@ -49,10 +59,20 @@ function App() {
         tasksForRender = tasks.filter(t => t.isDone)
     }
 
-    return (
-        <div className="App">
-            <TodoList tasks={tasksForRender}
-                      title={"What to learn"}
+    const todoListComponents = todoLists.map( tl => {
+        let tasksForRender: Array<TaskType> = tasks[tl.id]
+        if (tl.filter === "active") {
+            tasksForRender = tasks[tl.id].filter(t => !t.isDone)
+        }
+        if (tl.filter === "completed") {
+            tasksForRender = tasks[tl.id].filter(t => t.isDone)
+        }
+        return (
+            <TodoList key={tl.id}
+                      id={tl.id}
+                      title={tl.title}
+                      filter={tl.filter}
+                      tasks={tasksForRender}
                       removeTask={removeTask}
                       changeFilter={changeFilter}
                       addTask={addTask}
