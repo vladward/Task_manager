@@ -75,7 +75,10 @@ const TodoList = (props: TodoListPropsType) => {
 
     return (
         <div className="todolist">
-            <h3>{props.title}</h3>
+            <h3>
+                {props.title}
+                <button onClick={() => props.removeTodoList(props.id)}>x</button>
+            </h3>
             <div>
                 <input className={error ? "error" : ''}
                        placeholder="Enter your task"

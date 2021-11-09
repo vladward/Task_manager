@@ -79,8 +79,10 @@ function App() {
     if (filter === "active") {
         tasksForRender = tasks.filter(t => !t.isDone)
     }
-    if (filter === "completed") {
-        tasksForRender = tasks.filter(t => t.isDone)
+
+    const removeTodoList = (todoListID: string) => {
+        setTodoLists(todoLists.filter(tl => tl.id !== todoListID))
+        delete tasks[todoListID]
     }
 
     const todoListComponents = todoLists.map( tl => {
@@ -102,9 +104,16 @@ function App() {
                       addTask={addTask}
                       filter={filter}
                       changeTaskStatus={changeTaskStatus}
+                      removeTodoList={removeTodoList}
             />
+        )
+    })
+
+    return (
+        <div className="App">
+            {todoListComponents}
         </div>
-    );
+    )
 }
 
 export default App;
