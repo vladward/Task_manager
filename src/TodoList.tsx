@@ -21,13 +21,13 @@ const TodoList = (props: TodoListPropsType) => {
         setTitle("")
     }
     const setAll = () => {
-        return props.changeFilter("all")
+        return props.changeFilter("all", props.id)
     }
     const setCompleted = () => {
-        return props.changeFilter("completed")
+        return props.changeFilter("completed", props.id)
     }
     const setActive = () => {
-        return props.changeFilter("active")
+        return props.changeFilter("active", props.id)
     }
     const onChangeTitle = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.currentTarget.value) {
