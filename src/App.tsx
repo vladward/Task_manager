@@ -44,11 +44,15 @@ function App() {
         ]
     })
 
-    const [tasks, setTasks] = useState<Array<TaskType>>(tasksState)
-    const [filter, setFilter] = useState<FilterValuesType>("all")
-
-    const removeTask = (taskID: string) => {
-        setTasks(tasks.filter(t => t.id !== taskID))
+    const removeTask = (taskID: string, todoListID: string) => {
+        // const copyState = {...tasks}
+        // const filteredTasks = tasks[todoListID] = tasks[todoListID].filter(t => t.id !== taskID)
+        // copyState[todoListID] = filteredTasks
+        // setTasks(copyState)
+        setTasks({
+            ...tasks,
+            [todoListID]: tasks[todoListID].filter(t => t.id !== taskID)
+        })
     }
     const addTask = (title: string) => {
         const newTask: TaskType = {
