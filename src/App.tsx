@@ -21,14 +21,28 @@ export type TasksStateType = {
 
 export type FilterValuesType = "all" | "active" | "completed"
 
-let tasksState = [
-    {id: v1(), title: "HTML", isDone: true},
-    {id: v1(), title: "CSS", isDone: true},
-    {id: v1(), title: "JS", isDone: false},
-    {id: v1(), title: "REACT", isDone: false},
-]
-
 function App() {
+    const todoListId_1 = v1()
+    const todoListId_2 = v1()
+    const [todoLists, setTodoLists] = useState<Array<TodoListType>>([
+        {id: todoListId_1, title: 'what to learn', filter: 'all'},
+        {id: todoListId_2, title: 'what to buy', filter: 'active'}
+    ])
+
+    const [tasks, setTasks] = useState<TasksStateType>({
+        [todoListId_1]:[
+            {id: v1(), title: "HTML", isDone: true},
+            {id: v1(), title: "CSS", isDone: true},
+            {id: v1(), title: "JS", isDone: false},
+            {id: v1(), title: "REACT", isDone: false}
+        ],
+        [todoListId_2]:[
+            {id: v1(), title: "Meat", isDone: true},
+            {id: v1(), title: "Milk", isDone: true},
+            {id: v1(), title: "Chease", isDone: false},
+            {id: v1(), title: "Beer", isDone: false},
+        ]
+    })
 
     const [tasks, setTasks] = useState<Array<TaskType>>(tasksState)
     const [filter, setFilter] = useState<FilterValuesType>("all")
