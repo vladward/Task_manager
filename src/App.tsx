@@ -75,9 +75,15 @@ function App() {
         })
     }
 
-    let tasksForRender = tasks
-    if (filter === "active") {
-        tasksForRender = tasks.filter(t => !t.isDone)
+    const addTodoList = (title: string) => {
+        const todoListID = v1()
+        const newTodoList: TodoListType = {
+            id: todoListID,
+            title,
+            filter: 'all'
+        }
+        setTodoLists([...todoLists, newTodoList])
+        setTasks({...tasks, [todoListID]: []})
     }
 
     const removeTodoList = (todoListID: string) => {
@@ -102,7 +108,6 @@ function App() {
                       removeTask={removeTask}
                       changeFilter={changeFilter}
                       addTask={addTask}
-                      filter={filter}
                       changeTaskStatus={changeTaskStatus}
                       removeTodoList={removeTodoList}
             />
