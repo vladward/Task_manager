@@ -51,7 +51,7 @@ const TodoList = (props: TodoListPropsType) => {
 
     const liJsxElements = props.tasks.map(t => {
         const removeTaskById = () => {
-            props.removeTask(t.id)
+            props.removeTask(t.id, props.id)
         }
         const onChangeTaskStatus = (e: ChangeEvent<HTMLInputElement>) => {
             props.changeTaskStatus(t.id, e.currentTarget.checked)
