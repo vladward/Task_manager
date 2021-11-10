@@ -62,7 +62,7 @@ function App() {
         }
         setTasks({
             ...tasks,
-            [todoListID]: [newTask, ...tasks[todoListID]]
+            [todoListID]: [...tasks[todoListID], {id: v1(), title, isDone: false}]
         })
     }
     const changeFilter = (filter: FilterValuesType, todoListID: string) => {
