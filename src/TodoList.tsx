@@ -1,7 +1,10 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import React, {ChangeEvent} from "react";
 import {FilterValuesType, TaskType} from "./App";
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
 import {EditableSpan} from "./Components/EditableSpan/EditableSpan";
+import {Button, Checkbox, IconButton, ListItem, ListItemIcon, Typography} from "@material-ui/core";
+import DeleteIcon from '@material-ui/icons/Delete';
+import {HighlightOff} from "@material-ui/icons";
 
 export type TodoListPropsType = {
     id: string
@@ -36,10 +39,6 @@ const TodoList = (props: TodoListPropsType) => {
         props.changeTodoListTitle(title, props.id)
     }
 
-    let allBtnClass = props.filter === 'all' ? "active-filter" : ""
-    let activeBtnClass = props.filter === 'active' ? "active-filter" : ""
-    let completedBtnClass = props.filter === 'completed' ? "active-filter" : ""
-
     const liJsxElements = props.tasks.map(t => {
         const removeTaskById = () => {
             props.removeTask(t.id, props.id)
@@ -51,7 +50,10 @@ const TodoList = (props: TodoListPropsType) => {
             props.changeTaskTitle(t.id, title, props.id)
         }
         return (
-            <li className={t.isDone ? "done-task" : ''}
+            <ListItem className={t.isDone ? "done-task" : ''}
+                      disableGutters
+                      style={{ padding: "0", display: "flex", justifyContent: "space-between", maxWidth: "260px" }}
+                      divider
                 key={t.id}>
 
                     <Checkbox
@@ -62,25 +64,36 @@ const TodoList = (props: TodoListPropsType) => {
                     />
                 <EditableSpan title={t.title}
                               setNewTitle={changeTitle}/>
-                <button onClick={removeTaskById}>
-                    Del
-                </button>
-            </li>
+                <IconButton size={"small"} onClick={removeTaskById} aria-label="delete">
+                    <DeleteIcon />
+                </IconButton>
+            </ListItem>
         )
     })
 
     return (
         <div className="todolist">
-            <h3>
+            <Typography variant="h5" align="center">
                 <EditableSpan title={props.title} setNewTitle={changeTodoListTitle}/>
-                <button onClick={() => props.removeTodoList(props.id)}>x</button>
-            </h3>
-            <AddItemForm addItem={createTask}/>
+                <IconButton aria-label="delete" onClick={() => props.removeTodoList(props.id)}>
+                    <HighlightOff fontSize={"medium"}/>
+                </IconButton>
+            </Typography>
+            <AddItemForm addItem={createTask} initValue={"Enter task title"}/>
             {liJsxElements}
-            <div>
-                <button className={allBtnClass} onClick={setAll}>All</button>
-                <button className={activeBtnClass} onClick={setActive}>Active</button>
-                <button className={completedBtnClass} onClick={setCompleted}>Completed</button>
+            <div className="filterButtons">
+                <Button variant="contained"
+                        size="small"
+                        color={props.filter === 'all' ? "primary" : "default"}
+                        onClick={setAll}>All</Button>
+                <Button variant="contained"
+                        size="small"
+                        color={props.filter === 'active' ? "primary" : "default"}
+                        onClick={setActive}>Active</Button>
+                <Button variant="contained"
+                        size="small"
+                        color={props.filter === 'completed' ? "primary" : "default"}
+                        onClick={setCompleted}>Completed</Button>
             </div>
         </div>
     )
