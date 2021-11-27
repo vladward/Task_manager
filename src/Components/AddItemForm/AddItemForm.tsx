@@ -11,11 +11,6 @@ export const AddItemForm = (props: AddItemFormType) => {
     const [title, setTitle] = useState<string>("")
     const [error, setError] = useState<boolean>(false)
 
-    const errorInpStyle = {border: "2px solid red", outline: "none"}
-
-    const errorMessage = error
-        ? <div style={{background: 'red', color: 'white'}}>Title is required</div>
-        : null
 
     const AddItem = () => {
         title.trim() !== ''
