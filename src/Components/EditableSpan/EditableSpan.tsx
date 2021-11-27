@@ -32,7 +32,7 @@ export const EditableSpan = (props: EditableSpanPropsType) => {
     return (
         editMode
             ?
-            <input onBlur={offEditMode}
+            <TextField onBlur={offEditMode}
                    value={title}
                    onKeyPress={onKeyPressEnter}
                    onChange={onChangeTitle}

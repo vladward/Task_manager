@@ -36,14 +36,17 @@ export const AddItemForm = (props: AddItemFormType) => {
 
     return (
         <div>
-            <input style={error ? errorInpStyle : undefined}
-                   placeholder="Enter title..."
-                   onChange={onChangeTitle}
-                   value={title}
-                   onKeyPress={onKeyPressEnter}
-            />
-            <button onClick={AddItem} disabled={error}>+</button>
-            {errorMessage}
+            <TextField label={!error ? (props.initValue ? props.initValue : "Enter title") : "Error"}
+                       size="small"
+                       variant="outlined"
+                       error={error}
+                       helperText={error ? "Title is required" : ""}
+                       onChange={onChangeTitle}
+                       value={title}
+                       onKeyPress={onKeyPressEnter}/>
+            <IconButton aria-label="delete" onClick={AddItem} style={{color: "green"}} disabled={!title}>
+                <AddBox fontSize="small" />
+            </IconButton>
         </div>
     )
 }

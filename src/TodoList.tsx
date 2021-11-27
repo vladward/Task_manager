@@ -53,10 +53,13 @@ const TodoList = (props: TodoListPropsType) => {
         return (
             <li className={t.isDone ? "done-task" : ''}
                 key={t.id}>
-                <input type="checkbox"
-                       checked={t.isDone}
-                       onChange={onChangeTaskStatus}
-                />
+
+                    <Checkbox
+                        edge="start"
+                        size="small"
+                        checked={t.isDone}
+                        onChange={onChangeTaskStatus}
+                    />
                 <EditableSpan title={t.title}
                               setNewTitle={changeTitle}/>
                 <button onClick={removeTaskById}>
