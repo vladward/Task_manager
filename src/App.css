@@ -1,27 +1,13 @@
-.App {
-  padding: 30px;
-  display: flex;
-}
-
-.App > div {
-  margin-right: 50px;
-}
-
-.todolist {
+.paper {
   padding: 10px;
-  border: 1px solid red;
-  border-radius: 10px;
 }
 
-.active-filter {
-  background: cornflowerblue;
+.filterButtons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
 }
 
 .done-task {
   opacity: .5;
-}
-
-.error {
-  border: 2px solid red;
-  outline: none;
 }
