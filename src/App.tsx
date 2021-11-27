@@ -116,7 +116,9 @@ function App() {
 
     return (
         <div className="App">
-            {todoListComponents}
+            <h3>New TodoList</h3>
+            <AddItemForm addItem={addTodoList}/>
+                {todoListComponents}
         </div>
     )
 }
