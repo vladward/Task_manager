@@ -1,4 +1,4 @@
-import {ActionType, calculator} from "./reducer";
+import {ActionType} from "./reducer";
 
 // test("test reducer", () => {
 //     // 1. Получаем тестовые данные
