@@ -6,7 +6,7 @@ import {
     ChangeTodolistTitleAC,
     RemoveTodolistAC,
     todolistsReducer
-} from "./reducer";
+} from "./todolistsReducer";
 
 test("remove todolist", () => {
     const todoListId_1 = v1()
