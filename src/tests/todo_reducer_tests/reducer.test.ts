@@ -15,11 +15,12 @@ test("remove todolist", () => {
         {id: todoListId_1, title: 'what to learn', filter: 'all'},
         {id: todoListId_2, title: 'what to buy', filter: 'active'}
     ]
-    const action = RemoveTodolistAC(todoListId_2)
+    const action = RemoveTodolistAC(todoListId_1)
 
     const endValue = todolistsReducer(startValue, action)
 
     expect(endValue.length).toBe(1)
+    expect(endValue[0].id).toBe(todoListId_2)
 })
 test("add todolist", () => {
     const todoListId_1 = v1()
