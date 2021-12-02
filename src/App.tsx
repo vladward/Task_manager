@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import TodoList from "./TodoList";
+import {TodoListContainer} from "./TodoList";
 import {v1} from 'uuid';
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
-import {IconButton, Toolbar, Typography, AppBar, Button, Container, Grid, Paper} from "@material-ui/core";
+import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
 
 export type TaskType = {
@@ -111,7 +111,7 @@ function App() {
         return (
             <Grid item key={tl.id}>
             <Paper elevation={3} className="paper">
-                <TodoList id={tl.id}
+                <TodoListContainer id={tl.id}
                           title={tl.title}
                           filter={tl.filter}
                           tasks={tasksForRender}

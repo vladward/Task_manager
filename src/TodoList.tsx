@@ -20,7 +20,7 @@ export type TodoListPropsType = {
     changeTodoListTitle: (title: string, todoListID: string) => void
 }
 
-const TodoList = (props: TodoListPropsType) => {
+export const TodoList = (props: TodoListPropsType) => {
 
     const createTask = (title: string) => {
         props.addTask(title, props.id)
@@ -99,4 +99,4 @@ const TodoList = (props: TodoListPropsType) => {
     )
 }
 
-export default TodoList
+export const TodoListContainer = React.memo(TodoList)
