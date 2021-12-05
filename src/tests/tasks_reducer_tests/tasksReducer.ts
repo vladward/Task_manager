@@ -1,6 +1,6 @@
 import {TasksStateType} from "../../App";
 import {v1} from "uuid";
-import {AddTodolistType} from "../todo_reducer_tests/todolistsReducer";
+import {AddTodolistType, RemoveTodolistType} from "../todo_reducer_tests/todolistsReducer";
 
 export type removeTasksType = {
     type: "REMOVE-TASKS"
@@ -26,7 +26,12 @@ export type changeTasksTitleType = {
     newTitle: string
 }
 
-type TasksActionType = removeTasksType | addTasksType | changeTasksStatusType | changeTasksTitleType | AddTodolistType
+type TasksActionType = removeTasksType
+    | addTasksType
+    | changeTasksStatusType
+    | changeTasksTitleType
+    | AddTodolistType
+    | RemoveTodolistType
 
 export const tasksReducer = (state: TasksStateType, action: TasksActionType): TasksStateType => {
     switch (action.type) {
@@ -41,17 +46,26 @@ export const tasksReducer = (state: TasksStateType, action: TasksActionType): Ta
         }
         case "CHANGE-TASKS-STATUS": {
             let copy = {...state}
-            return {...copy, [action.todoListID]: copy[action.todoListID]
-                        .map(t => t.id === action.taskId ? {...t, isDone: action.status} : t)}
+            return {
+                ...copy, [action.todoListID]: copy[action.todoListID]
+                    .map(t => t.id === action.taskId ? {...t, isDone: action.status} : t)
+            }
         }
         case "CHANGE-TASKS-TITLE": {
             let copy = {...state}
-            return {...copy, [action.todoListID]: copy[action.todoListID]
-                        .map(t => t.id === action.taskId ? {...t, title: action.newTitle} : t)}
+            return {
+                ...copy, [action.todoListID]: copy[action.todoListID]
+                    .map(t => t.id === action.taskId ? {...t, title: action.newTitle} : t)
+            }
         }
         case "ADD-TODOLIST": {
             let copy = {...state}
             copy[action.todolistId] = []
+            return copy
+        }
+        case "REMOVE-TODOLIST": {
+            let copy = {...state}
+            delete copy[action.id]
             return copy
         }
         default:
