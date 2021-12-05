@@ -1,13 +1,14 @@
 import {useState} from "react";
 import {v1} from "uuid";
 import {TasksStateType, TodoListType} from "../../App";
+import {removeTaskAC, tasksReducer} from "./tasksReducer";
 
 test('remove task from todolist', () => {
     const todoListId_1 = v1()
     const todoListId_2 = v1()
 
 
-    const startState = {
+    const startState: TasksStateType = {
         [todoListId_1]: [
             {id: v1(), title: "HTML", isDone: true},
             {id: v1(), title: "CSS", isDone: true},
@@ -22,9 +23,11 @@ test('remove task from todolist', () => {
         ]
     }
 
-    const endState = tasksReducer(startState, removeTaskAC(taskId: string, todolistId: string))
+    const ID = startState[todoListId_2][1].id
 
-    expect(endState[todoListId_2][2].title).toBe("Cheese")
+    const endState = tasksReducer(startState, removeTaskAC(ID, todoListId_2))
+
+    expect(endState[todoListId_2][1].title).toBe("Cheese")
     expect(endState[todoListId_2].length).toBe(3)
     expect(endState[todoListId_1].length).toBe(4)
 })
