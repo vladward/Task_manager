@@ -1,24 +1,25 @@
 import {TasksStateType} from "../../App";
 import {v1} from "uuid";
+import {AddTodolistType} from "../todo_reducer_tests/todolistsReducer";
 
-type removeTasksType = {
+export type removeTasksType = {
     type: "REMOVE-TASKS"
     taskId: string
     todoListID: string
 }
-type addTasksType = {
+export type addTasksType = {
     type: "ADD-TASKS"
     taskId: string
     todoListID: string
     title: string
 }
-type changeTasksStatusType = {
+export type changeTasksStatusType = {
     type: "CHANGE-TASKS-STATUS",
     taskId: string
     todoListID: string
     status: boolean
 }
-type changeTasksTitleType = {
+export type changeTasksTitleType = {
     type: "CHANGE-TASKS-TITLE",
     taskId: string
     todoListID: string
