@@ -61,6 +61,7 @@ export const tasksReducer = (state: TasksStateType, action: TasksActionType): Ta
         }
         default:
             return state
+        // throw new Error('i not understand this type')
     }
 }
 
