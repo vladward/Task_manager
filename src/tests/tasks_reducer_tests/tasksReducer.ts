@@ -44,11 +44,8 @@ export const tasksReducer = (state: TasksStateType, action: TasksActionType): Ta
             return {...state, [action.todoListID]: [{id: v1(), title: action.title, isDone: false}, ...state[action.todoListID]]}
         }
         case "CHANGE-TASKS-STATUS": {
-            let copy = {...state}
-            return {
-                ...copy, [action.todoListID]: copy[action.todoListID]
-                    .map(t => t.id === action.taskId ? {...t, isDone: action.status} : t)
-            }
+            return {...state, [action.todoListID]: state[action.todoListID]
+                    .map(t => t.id === action.taskId ? {...t, isDone: action.status} : t)}
         }
         case "CHANGE-TASKS-TITLE": {
             let copy = {...state}
