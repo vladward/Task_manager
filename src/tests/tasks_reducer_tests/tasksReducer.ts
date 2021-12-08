@@ -36,8 +36,7 @@ type TasksActionType = removeTasksType
 export const tasksReducer = (state: TasksStateType, action: TasksActionType): TasksStateType => {
     switch (action.type) {
         case "REMOVE-TASKS": {
-            let copy = {...state}
-            return {...copy, [action.todoListID]: copy[action.todoListID].filter(t => t.id !== action.taskId)}
+            return {...state, [action.todoListID]: state[action.todoListID].filter(t => t.id !== action.taskId)}
         }
         case "ADD-TASKS": {
             let copy = {...state}
