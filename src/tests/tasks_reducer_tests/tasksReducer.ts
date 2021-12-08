@@ -9,7 +9,6 @@ export type removeTasksType = {
 }
 export type addTasksType = {
     type: "ADD-TASKS"
-    taskId: string
     todoListID: string
     title: string
 }
@@ -39,9 +38,10 @@ export const tasksReducer = (state: TasksStateType, action: TasksActionType): Ta
             return {...state, [action.todoListID]: state[action.todoListID].filter(t => t.id !== action.taskId)}
         }
         case "ADD-TASKS": {
-            let copy = {...state}
-            copy[action.todoListID] = [{id: v1(), title: action.title, isDone: false}, ...copy[action.todoListID]]
-            return copy
+            // let copy = {...state}
+            // copy[action.todoListID] = [{id: v1(), title: action.title, isDone: false}, ...copy[action.todoListID]]
+            // return copy
+            return {...state, [action.todoListID]: [{id: v1(), title: action.title, isDone: false}, ...state[action.todoListID]]}
         }
         case "CHANGE-TASKS-STATUS": {
             let copy = {...state}
@@ -75,8 +75,8 @@ export const tasksReducer = (state: TasksStateType, action: TasksActionType): Ta
 export const removeTaskAC = (taskId: string, todoListID: string): removeTasksType => {
     return {type: "REMOVE-TASKS", taskId, todoListID} as const
 }
-export const addTaskAC = (taskId: string, todoListID: string, title: string): addTasksType => {
-    return {type: "ADD-TASKS", taskId, todoListID, title} as const
+export const addTaskAC = (todoListID: string, title: string): addTasksType => {
+    return {type: "ADD-TASKS", todoListID, title} as const
 }
 export const changeTaskStatusAC = (taskId: string, todoListID: string, status: boolean): changeTasksStatusType => {
     return {type: "CHANGE-TASKS-STATUS", taskId, todoListID, status} as const

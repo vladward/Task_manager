@@ -55,14 +55,14 @@ test('add task to todolist', () => {
 
     const title = 'WEB'
 
-    const ID = startState[todoListId_2][1].id
-
-    const endState = tasksReducer(startState, addTaskAC(ID, todoListId_1, title))
+    const endState = tasksReducer(startState, addTaskAC(todoListId_1, title))
     console.log(startState)
 
-    expect(endState[todoListId_1][0].title).toBe("WEB")
-    expect(endState[todoListId_2].length).toBe(4)
-    expect(endState[todoListId_1].length).toBe(5)
+    expect(endState[todoListId_1].length).toBe(5);
+    expect(endState[todoListId_2].length).toBe(4);
+    expect(endState[todoListId_1][0].id).toBeDefined();
+    expect(endState[todoListId_1][0].title).toBe('WEB');
+    expect(endState[todoListId_1][0].isDone).toBe(false);
 })
 
 test('change Task Status', () => {
