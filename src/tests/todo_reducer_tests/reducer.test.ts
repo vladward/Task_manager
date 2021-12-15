@@ -8,28 +8,27 @@ import {
     todolistsReducer
 } from "./todolistsReducer";
 
-test("remove todolist", () => {
-    const todoListId_1 = v1()
-    const todoListId_2 = v1()
-    const startValue: TodoListType[] = [
+let todoListId_1: string
+let todoListId_2: string
+let startValue: TodoListType[]
+
+beforeEach(() => {
+    todoListId_1 = v1()
+    todoListId_2 = v1()
+    startValue = [
         {id: todoListId_1, title: 'what to learn', filter: 'all'},
         {id: todoListId_2, title: 'what to buy', filter: 'active'}
     ]
-    const action = RemoveTodolistAC(todoListId_1)
+    })
 
+test("remove todolist", () => {
+    const action = RemoveTodolistAC(todoListId_1)
     const endValue = todolistsReducer(startValue, action)
 
     expect(endValue.length).toBe(1)
     expect(endValue[0].id).toBe(todoListId_2)
 })
 test("add todolist", () => {
-    const todoListId_1 = v1()
-    const todoListId_2 = v1()
-    const startValue: TodoListType[] = [
-        {id: todoListId_1, title: 'what to learn', filter: 'all'},
-        {id: todoListId_2, title: 'what to buy', filter: 'active'}
-    ]
-
     const newTitle = 'what to eat'
     const action = AddTodolistAC(newTitle)
 
@@ -40,13 +39,6 @@ test("add todolist", () => {
     expect(endValue[2].filter).toBe('all')
 })
 test("change todolist title", () => {
-    const todoListId_1 = v1()
-    const todoListId_2 = v1()
-    const startValue: TodoListType[] = [
-        {id: todoListId_1, title: 'what to learn', filter: 'all'},
-        {id: todoListId_2, title: 'what to buy', filter: 'active'}
-    ]
-
     const title = 'work tasks'
     const action = ChangeTodolistTitleAC(title, todoListId_2)
 
@@ -57,13 +49,6 @@ test("change todolist title", () => {
     expect(startValue.length).toBe(2)
 })
 test("change todolist filter", () => {
-    const todoListId_1 = v1()
-    const todoListId_2 = v1()
-    const startValue: TodoListType[] = [
-        {id: todoListId_1, title: 'what to learn', filter: 'all'},
-        {id: todoListId_2, title: 'what to buy', filter: 'active'}
-    ]
-
     const newFilter: FilterValuesType = 'completed'
     const action = ChangeTodolistFilterAC(newFilter, todoListId_2)
 
