@@ -1,6 +1,6 @@
 import {v1} from "uuid";
-import {AddTodolistType, RemoveTodolistType} from "../todo_reducer_tests/todolistsReducer";
-import {TasksStateType, TaskType} from "../../App";
+import {AddTodolistType, RemoveTodolistType} from "./todolistsReducer";
+import {TasksStateType, TaskType} from "../App";
 
 export type removeTasksType = {
     type: "REMOVE-TASKS"
@@ -34,6 +34,19 @@ type TasksActionType = removeTasksType
     | AddTodolistType
     | RemoveTodolistType
 
+export const removeTaskAC = (taskId: string, todoListID: string): removeTasksType => {
+    return {type: "REMOVE-TASKS", taskId, todoListID} as const
+}
+export const addTaskAC = (todoListID: string, title: string): addTasksType => {
+    return {type: "ADD-TASKS", todoListID, title} as const
+}
+export const changeTaskStatusAC = (taskId: string, todoListID: string, status: boolean): changeTasksStatusType => {
+    return {type: "CHANGE-TASKS-STATUS", taskId, todoListID, status} as const
+}
+export const changeTaskTitleAC = (taskId: string, todoListID: string, newTitle: string): changeTasksTitleType => {
+    return {type: "CHANGE-TASKS-TITLE", taskId, todoListID, newTitle} as const
+}
+
 export const tasksReducer = (state = initialState, action: TasksActionType): TasksStateType => {
     switch (action.type) {
         case "REMOVE-TASKS": {
@@ -62,17 +75,4 @@ export const tasksReducer = (state = initialState, action: TasksActionType): Tas
             return state
         // throw new Error('i not understand this type')
     }
-}
-
-export const removeTaskAC = (taskId: string, todoListID: string): removeTasksType => {
-    return {type: "REMOVE-TASKS", taskId, todoListID} as const
-}
-export const addTaskAC = (todoListID: string, title: string): addTasksType => {
-    return {type: "ADD-TASKS", todoListID, title} as const
-}
-export const changeTaskStatusAC = (taskId: string, todoListID: string, status: boolean): changeTasksStatusType => {
-    return {type: "CHANGE-TASKS-STATUS", taskId, todoListID, status} as const
-}
-export const changeTaskTitleAC = (taskId: string, todoListID: string, newTitle: string): changeTasksTitleType => {
-    return {type: "CHANGE-TASKS-TITLE", taskId, todoListID, newTitle} as const
 }

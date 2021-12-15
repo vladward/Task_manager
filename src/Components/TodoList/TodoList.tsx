@@ -1,18 +1,29 @@
 import React, {ChangeEvent} from "react";
-import {TaskType, TodoListType} from "./App";
-import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
-import {EditableSpan} from "./Components/EditableSpan/EditableSpan";
-import {Button, Checkbox, IconButton, ListItem, Typography} from "@material-ui/core";
+import {TaskType, TodoListType} from "../../App";
+import {AddItemForm} from "../AddItemForm/AddItemForm";
+import {EditableSpan} from "../EditableSpan/EditableSpan";
+import {
+    Button,
+    Checkbox,
+    IconButton,
+    ListItem,
+    Typography
+} from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
 import {HighlightOff} from "@material-ui/icons";
 import {useDispatch, useSelector} from "react-redux";
-import {RootStateType} from "./state/store";
-import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from "./tests/tasks_reducer_tests/tasksReducer";
+import {RootStateType} from "../../state/store";
+import {
+    addTaskAC,
+    changeTaskStatusAC,
+    changeTaskTitleAC,
+    removeTaskAC
+} from "../../state/tasksReducer";
 import {
     ChangeTodolistFilterAC,
     ChangeTodolistTitleAC,
     RemoveTodolistAC
-} from "./tests/todo_reducer_tests/todolistsReducer";
+} from "../../state/todolistsReducer";
 
 type PropsType = {
     todolistId: string

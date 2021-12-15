@@ -1,10 +1,19 @@
 import React from 'react';
 import './App.css';
-import {TodoListContainer} from "./TodoList";
+import {TodoListContainer} from "./Components/TodoList/TodoList";
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
-import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
+import {
+    AppBar,
+    Button,
+    Container,
+    Grid,
+    IconButton,
+    Paper,
+    Toolbar,
+    Typography
+} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
-import {AddTodolistAC} from "./tests/todo_reducer_tests/todolistsReducer";
+import {AddTodolistAC} from "./state/todolistsReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "./state/store";
 
@@ -13,17 +22,14 @@ export type TaskType = {
     title: string
     isDone: boolean
 }
-
 export type TodoListType = {
     id: string
     title: string
     filter: FilterValuesType
 }
-
 export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
-
 export type FilterValuesType = "all" | "active" | "completed"
 
 function App() {
@@ -38,8 +44,8 @@ function App() {
         return (
             <Grid item key={tl.id}>
                 <Paper elevation={3} className="paper">
-                    <TodoListContainer key={tl.id} todolistId={tl.id}
-
+                    <TodoListContainer key={tl.id}
+                                       todolistId={tl.id}
                     />
                 </Paper>
             </Grid>

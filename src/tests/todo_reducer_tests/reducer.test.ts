@@ -6,7 +6,7 @@ import {
     ChangeTodolistTitleAC,
     RemoveTodolistAC,
     todolistsReducer
-} from "./todolistsReducer";
+} from "../../state/todolistsReducer";
 
 let todoListId_1: string
 let todoListId_2: string
