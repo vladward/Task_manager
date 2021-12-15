@@ -1,10 +1,23 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import './App.css';
 import {TodoListContainer} from "./TodoList";
 import {v1} from 'uuid';
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
 import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
+import {
+    AddTodolistAC, ChangeTodolistFilterAC,
+    ChangeTodolistTitleAC,
+    RemoveTodolistAC,
+    todolistsReducer
+} from "./tests/todo_reducer_tests/todolistsReducer";
+import {
+    addTaskAC,
+    changeTaskStatusAC,
+    changeTaskTitleAC,
+    removeTaskAC,
+    tasksReducer
+} from "./tests/tasks_reducer_tests/tasksReducer";
 
 export type TaskType = {
     id: string
@@ -27,12 +40,12 @@ export type FilterValuesType = "all" | "active" | "completed"
 function App() {
     const todoListId_1 = v1()
     const todoListId_2 = v1()
-    const [todoLists, setTodoLists] = useState<Array<TodoListType>>([
+    const [todoLists, dispatchToTodoLists] = useReducer(todolistsReducer, [
         {id: todoListId_1, title: 'what to learn', filter: 'all'},
         {id: todoListId_2, title: 'what to buy', filter: 'active'}
     ])
 
-    const [tasks, setTasks] = useState<TasksStateType>({
+    const [tasks, dispatchToTasks] = useReducer(tasksReducer, {
         [todoListId_1]: [
             {id: v1(), title: "HTML", isDone: true},
             {id: v1(), title: "CSS", isDone: true},
@@ -52,36 +65,39 @@ function App() {
         // const filteredTasks = tasks[todoListID] = tasks[todoListID].filter(t => t.id !== taskID)
         // copyState[todoListID] = filteredTasks
         // setTasks(copyState)
-        setTasks({
-            ...tasks,
-            [todoListID]: tasks[todoListID].filter(t => t.id !== taskID)
-        })
+
+        dispatchToTasks(removeTaskAC(taskID, todoListID))
     }
     const addTask = (title: string, todoListID: string) => {
-        setTasks({
-            ...tasks,
-            [todoListID]: [{id: v1(), title, isDone: false}, ...tasks[todoListID]]
-        })
+        // setTasks({
+        //     ...tasks,
+        //     [todoListID]: [{id: v1(), title, isDone: false}, ...tasks[todoListID]]
+        // })
+        dispatchToTasks(addTaskAC(title, todoListID))
     }
     const changeFilter = (filter: FilterValuesType, todoListID: string) => {
-        setTodoLists(todoLists.map(tl => tl.id === todoListID ? {...tl, filter} : tl))
+        //setTodoLists(todoLists.map(tl => tl.id === todoListID ? {...tl, filter} : tl))
+        dispatchToTodoLists(ChangeTodolistFilterAC(filter, todoListID))
     }
-    const changeTaskStatus = (taskID: string, isDone: boolean, todoListID: string) => {
-        setTasks({
-            ...tasks,
-            [todoListID]: tasks[todoListID].map(t => t.id === taskID ? {...t, isDone} : t)
-        })
+    const changeTaskStatus = (taskID: string, todoListID: string, isDone: boolean) => {
+        // setTasks({
+        //     ...tasks,
+        //     [todoListID]: tasks[todoListID].map(t => t.id === taskID ? {...t, isDone} : t)
+        // })
+        dispatchToTasks(changeTaskStatusAC(taskID, todoListID, isDone))
     }
 
     const changeTaskTitle = (taskID: string, title: string, todoListID: string) => {
-        setTasks({
-            ...tasks,
-            [todoListID]: tasks[todoListID].map(t => t.id === taskID ? {...t, title} : t)
-        })
+        // setTasks({
+        //     ...tasks,
+        //     [todoListID]: tasks[todoListID].map(t => t.id === taskID ? {...t, title} : t)
+        // })
+        dispatchToTasks(changeTaskTitleAC(taskID, title, todoListID))
     }
 
     const changeTodoListTitle = (title: string, todoListID: string) => {
-        setTodoLists(todoLists.map(tl => tl.id === todoListID ? {...tl, title} : tl))
+        // setTodoLists(todoLists.map(tl => tl.id === todoListID ? {...tl, title} : tl))
+    dispatchToTodoLists(ChangeTodolistTitleAC(title, todoListID))
     }
 
     const addTodoList = (title: string) => {

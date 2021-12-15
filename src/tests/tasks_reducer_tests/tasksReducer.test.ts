@@ -1,6 +1,5 @@
-import {useState} from "react";
 import {v1} from "uuid";
-import {TasksStateType, TodoListType} from "../../App";
+import {TasksStateType} from "../../App";
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksReducer} from "./tasksReducer";
 import {AddTodolistAC, RemoveTodolistAC} from "../todo_reducer_tests/todolistsReducer";
 
@@ -11,8 +10,6 @@ let startState: TasksStateType
 beforeEach(() => {
     todoListId_1 = v1()
     todoListId_2 = v1()
-
-
     startState = {
         [todoListId_1]: [
             {id: v1(), title: "HTML", isDone: true},
