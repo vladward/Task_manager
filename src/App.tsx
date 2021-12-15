@@ -115,8 +115,11 @@ function App() {
     }
 
     const removeTodoList = (todoListID: string) => {
-        setTodoLists(todoLists.filter(tl => tl.id !== todoListID))
-        delete tasks[todoListID]
+        // setTodoLists(todoLists.filter(tl => tl.id !== todoListID))
+        // delete tasks[todoListID]
+        let action = RemoveTodolistAC(todoListID)
+        dispatchToTodoLists(action)
+        dispatchToTasks(action)
     }
 
     const todoListComponents = todoLists.map(tl => {
