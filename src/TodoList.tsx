@@ -1,8 +1,8 @@
 import React, {ChangeEvent} from "react";
-import {FilterValuesType, TasksStateType, TaskType, TodoListType} from "./App";
+import {TaskType, TodoListType} from "./App";
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
 import {EditableSpan} from "./Components/EditableSpan/EditableSpan";
-import {Button, Checkbox, IconButton, ListItem, ListItemIcon, Typography} from "@material-ui/core";
+import {Button, Checkbox, IconButton, ListItem, Typography} from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
 import {HighlightOff} from "@material-ui/icons";
 import {useDispatch, useSelector} from "react-redux";
@@ -26,24 +26,19 @@ export const TodoList = (props: PropsType) => {
     const dispatch = useDispatch()
 
     const createTask = (title: string) => {
-        //props.addTask(title, props.id)
         dispatch(addTaskAC(props.todolistId, title))
     }
     const setAll = () => {
-        //return props.changeFilter("all", props.id)
         dispatch(ChangeTodolistFilterAC('all', props.todolistId))
     }
     const setCompleted = () => {
-        //return props.changeFilter("completed", props.id)
         dispatch(ChangeTodolistFilterAC('completed', props.todolistId))
     }
     const setActive = () => {
-        //return props.changeFilter("active", props.id)
         dispatch(ChangeTodolistFilterAC('active', props.todolistId))
     }
 
     const changeTodoListTitle = (title: string) => {
-        //props.changeTodoListTitle(title, props.id)
         dispatch(ChangeTodolistTitleAC(title, props.todolistId))
     }
     let filteredTask = tasks
@@ -56,15 +51,12 @@ export const TodoList = (props: PropsType) => {
 
     const liJsxElements = filteredTask.map(t => {
         const removeTaskById = () => {
-            //props.removeTask(t.id, props.id)
             dispatch(removeTaskAC(t.id, props.todolistId))
         }
         const onChangeTaskStatus = (e: ChangeEvent<HTMLInputElement>) => {
-            //props.changeTaskStatus(t.id, props.id, e.currentTarget.checked)
             dispatch(changeTaskStatusAC(t.id, props.todolistId, e.currentTarget.checked))
         }
         const changeTitle = (title: string) => {
-            //props.changeTaskTitle(t.id, title, props.id)
             dispatch(changeTaskTitleAC(t.id, title, props.todolistId))
         }
         return (
