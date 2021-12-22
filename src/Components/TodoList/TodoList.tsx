@@ -29,29 +29,19 @@ type PropsType = {
     todolistId: string
 }
 
-export const TodoList = (props: PropsType) => {
+export const TodoList = React.memo(({todolistId}: PropsType) => {
 
     const todolist = useSelector<RootStateType, TodoListType>(state => state.todolists
-        .filter(todo => todo.id === props.todolistId)[0])
-    const tasks = useSelector<RootStateType, TaskType[]>(state => state.tasks[props.todolistId])
+        .filter(todo => todo.id === todolistId)[0])
+    const tasks = useSelector<RootStateType, TaskType[]>(state => state.tasks[todolistId])
     const dispatch = useDispatch()
 
-    const createTask = useCallback((title: string) => {
-        dispatch(addTaskAC(props.todolistId, title))
-    },[dispatch, props.todolistId])
-    const setAll = () => {
-        dispatch(ChangeTodolistFilterAC('all', props.todolistId))
-    }
-    const setCompleted = () => {
-        dispatch(ChangeTodolistFilterAC('completed', props.todolistId))
-    }
-    const setActive = () => {
-        dispatch(ChangeTodolistFilterAC('active', props.todolistId))
-    }
+    const createTask = useCallback((title: string) => {dispatch(addTaskAC(todolistId, title))},[dispatch, todolistId])
+    const setAll = () => {dispatch(ChangeTodolistFilterAC('all', todolistId))}
+    const setCompleted = () => {dispatch(ChangeTodolistFilterAC('completed', todolistId))}
+    const setActive = () => {dispatch(ChangeTodolistFilterAC('active', todolistId))}
 
-    const changeTodoListTitle = (title: string) => {
-        dispatch(ChangeTodolistTitleAC(title, props.todolistId))
-    }
+    const changeTodoListTitle = useCallback((title: string) => {dispatch(ChangeTodolistTitleAC(title, todolistId))}, [todolistId])
     let filteredTask = tasks
     if (todolist.filter === "active") {
         filteredTask = tasks.filter(t => !t.isDone)
@@ -61,15 +51,9 @@ export const TodoList = (props: PropsType) => {
     }
 
     const liJsxElements = filteredTask.map(t => {
-        const removeTaskById = () => {
-            dispatch(removeTaskAC(t.id, props.todolistId))
-        }
-        const onChangeTaskStatus = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch(changeTaskStatusAC(t.id, props.todolistId, e.currentTarget.checked))
-        }
-        const changeTitle = (title: string) => {
-            dispatch(changeTaskTitleAC(t.id, title, props.todolistId))
-        }
+        const removeTaskById = () => {dispatch(removeTaskAC(t.id, todolistId))}
+        const onChangeTaskStatus = (e: ChangeEvent<HTMLInputElement>) => {dispatch(changeTaskStatusAC(t.id, todolistId, e.currentTarget.checked))}
+        const changeTitle = (title: string) => {dispatch(changeTaskTitleAC(t.id, todolistId, title))}
         return (
             <ListItem className={t.isDone ? "done-task" : ''}
                       disableGutters
@@ -96,7 +80,7 @@ export const TodoList = (props: PropsType) => {
         <div className="todolist">
             <Typography variant="h5" align="center">
                 <EditableSpan title={todolist.title} setNewTitle={changeTodoListTitle}/>
-                <IconButton aria-label="delete" onClick={() => dispatch(RemoveTodolistAC(props.todolistId))}>
+                <IconButton aria-label="delete" onClick={() => dispatch(RemoveTodolistAC(todolistId))}>
                     <HighlightOff fontSize={"medium"}/>
                 </IconButton>
             </Typography>
@@ -118,6 +102,4 @@ export const TodoList = (props: PropsType) => {
             </div>
         </div>
     )
-}
-
-export const TodoListContainer = React.memo(TodoList)
+})
