@@ -21,12 +21,22 @@ export const TodoList = React.memo(({todolistId}: PropsType) => {
     const tasks = useSelector<RootStateType, TaskType[]>(state => state.tasks[todolistId])
     const dispatch = useDispatch()
 
-    const createTask = useCallback((title: string) => {dispatch(addTaskAC(todolistId, title))},[dispatch, todolistId])
-    const setAll = () => {dispatch(ChangeTodolistFilterAC('all', todolistId))}
-    const setCompleted = () => {dispatch(ChangeTodolistFilterAC('completed', todolistId))}
-    const setActive = () => {dispatch(ChangeTodolistFilterAC('active', todolistId))}
+    const createTask = useCallback((title: string) => {
+        dispatch(addTaskAC(todolistId, title))
+    }, [dispatch, todolistId])
+    const setAll = () => {
+        dispatch(ChangeTodolistFilterAC('all', todolistId))
+    }
+    const setCompleted = () => {
+        dispatch(ChangeTodolistFilterAC('completed', todolistId))
+    }
+    const setActive = () => {
+        dispatch(ChangeTodolistFilterAC('active', todolistId))
+    }
 
-    const changeTodoListTitle = useCallback((title: string) => {dispatch(ChangeTodolistTitleAC(title, todolistId))}, [todolistId])
+    const changeTodoListTitle = useCallback((title: string) => {
+        dispatch(ChangeTodolistTitleAC(title, todolistId))
+    }, [todolistId])
     let filteredTask = tasks
     if (todolist.filter === "active") {
         filteredTask = tasks.filter(t => !t.isDone)
@@ -45,7 +55,10 @@ export const TodoList = React.memo(({todolistId}: PropsType) => {
             </Typography>
             <AddItemForm addItem={createTask} initValue={"Enter task title"}/>
 
-            {filteredTask.map(t => <Task key={t.id} task={t} todolistId={todolistId}/>)}
+            {filteredTask.map(t => <Task key={t.id}
+                                         task={t}
+                                         todolistId={todolistId}
+            />)}
 
             <div className="filterButtons">
                 <Button variant="contained"
