@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React, {ChangeEvent, useCallback} from "react";
 import {TaskType, TodoListType} from "../../App";
 import {AddItemForm} from "../AddItemForm/AddItemForm";
 import {EditableSpan} from "../EditableSpan/EditableSpan";
@@ -36,9 +36,9 @@ export const TodoList = (props: PropsType) => {
     const tasks = useSelector<RootStateType, TaskType[]>(state => state.tasks[props.todolistId])
     const dispatch = useDispatch()
 
-    const createTask = (title: string) => {
+    const createTask = useCallback((title: string) => {
         dispatch(addTaskAC(props.todolistId, title))
-    }
+    },[dispatch, props.todolistId])
     const setAll = () => {
         dispatch(ChangeTodolistFilterAC('all', props.todolistId))
     }
