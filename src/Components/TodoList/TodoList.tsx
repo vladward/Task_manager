@@ -1,29 +1,14 @@
-import React, {ChangeEvent, useCallback} from "react";
+import React, {useCallback} from "react";
 import {TaskType, TodoListType} from "../../App";
 import {AddItemForm} from "../AddItemForm/AddItemForm";
 import {EditableSpan} from "../EditableSpan/EditableSpan";
-import {
-    Button,
-    Checkbox,
-    IconButton,
-    ListItem,
-    Typography
-} from "@material-ui/core";
-import DeleteIcon from '@material-ui/icons/Delete';
+import {Button, IconButton, Typography} from "@material-ui/core";
 import {HighlightOff} from "@material-ui/icons";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../state/store";
-import {
-    addTaskAC,
-    changeTaskStatusAC,
-    changeTaskTitleAC,
-    removeTaskAC
-} from "../../state/tasksReducer";
-import {
-    ChangeTodolistFilterAC,
-    ChangeTodolistTitleAC,
-    RemoveTodolistAC
-} from "../../state/todolistsReducer";
+import {addTaskAC} from "../../state/tasksReducer";
+import {ChangeTodolistFilterAC, ChangeTodolistTitleAC, RemoveTodolistAC} from "../../state/todolistsReducer";
+import {Task} from "../../Task/Task";
 
 type PropsType = {
     todolistId: string
@@ -50,32 +35,6 @@ export const TodoList = React.memo(({todolistId}: PropsType) => {
         filteredTask = tasks.filter(t => t.isDone)
     }
 
-    const liJsxElements = filteredTask.map(t => {
-        const removeTaskById = () => {dispatch(removeTaskAC(t.id, todolistId))}
-        const onChangeTaskStatus = (e: ChangeEvent<HTMLInputElement>) => {dispatch(changeTaskStatusAC(t.id, todolistId, e.currentTarget.checked))}
-        const changeTitle = (title: string) => {dispatch(changeTaskTitleAC(t.id, todolistId, title))}
-        return (
-            <ListItem className={t.isDone ? "done-task" : ''}
-                      disableGutters
-                      style={{padding: "0", display: "flex", justifyContent: "space-between", maxWidth: "260px"}}
-                      divider
-                      key={t.id}>
-
-                <Checkbox
-                    edge="start"
-                    size="small"
-                    checked={t.isDone}
-                    onChange={onChangeTaskStatus}
-                />
-                <EditableSpan title={t.title}
-                              setNewTitle={changeTitle}/>
-                <IconButton size={"small"} onClick={removeTaskById} aria-label="delete">
-                    <DeleteIcon/>
-                </IconButton>
-            </ListItem>
-        )
-    })
-
     return (
         <div className="todolist">
             <Typography variant="h5" align="center">
@@ -85,7 +44,9 @@ export const TodoList = React.memo(({todolistId}: PropsType) => {
                 </IconButton>
             </Typography>
             <AddItemForm addItem={createTask} initValue={"Enter task title"}/>
-            {liJsxElements}
+
+            {filteredTask.map(t => <Task key={t.id} task={t} todolistId={todolistId}/>)}
+
             <div className="filterButtons">
                 <Button variant="contained"
                         size="small"
