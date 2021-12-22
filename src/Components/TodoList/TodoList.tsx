@@ -56,7 +56,7 @@ export const TodoList = React.memo(({todolistId}: PropsType) => {
             <AddItemForm addItem={createTask} initValue={"Enter task title"}/>
 
             {filteredTask.map(t => <Task key={t.id}
-                                         task={t}
+                                         taskId={t.id}
                                          todolistId={todolistId}
             />)}
 
