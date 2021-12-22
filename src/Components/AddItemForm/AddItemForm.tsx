@@ -7,10 +7,11 @@ type AddItemFormType = {
     initValue?: string
 }
 
-export const AddItemForm = (props: AddItemFormType) => {
+export const AddItemForm = React.memo((props: AddItemFormType) => {
     const [title, setTitle] = useState<string>("")
     const [error, setError] = useState<boolean>(false)
 
+    console.log('AddItemForm')
 
     const AddItem = () => {
         title.trim() !== ''
@@ -47,4 +48,4 @@ export const AddItemForm = (props: AddItemFormType) => {
             </IconButton>
         </div>
     )
-}
+})
