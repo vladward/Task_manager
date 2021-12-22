@@ -1,21 +1,12 @@
 import React, {useCallback} from 'react';
 import './App.css';
-import {TodoListContainer} from "./Components/TodoList/TodoList";
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
-import {
-    AppBar,
-    Button,
-    Container,
-    Grid,
-    IconButton,
-    Paper,
-    Toolbar,
-    Typography
-} from "@material-ui/core";
+import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
 import {AddTodolistAC} from "./state/todolistsReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "./state/store";
+import {TodoList} from "./Components/TodoList/TodoList";
 
 export type TaskType = {
     id: string
@@ -36,15 +27,13 @@ function App() {
     const todoLists = useSelector<RootStateType, TodoListType[]>(state => state.todolists)
     let dispatch = useDispatch()
 
-    const addTodoList = useCallback((title: string) => {
-        dispatch(AddTodolistAC(title))
-    },[dispatch])
+    const addTodoList = useCallback((title: string) => {dispatch(AddTodolistAC(title))},[dispatch])
 
     const todoListComponents = todoLists.map(tl => {
         return (
             <Grid item key={tl.id}>
                 <Paper elevation={3} className="paper">
-                    <TodoListContainer key={tl.id}
+                    <TodoList key={tl.id}
                                        todolistId={tl.id}
                     />
                 </Paper>
