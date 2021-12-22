@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './App.css';
 import {TodoListContainer} from "./Components/TodoList/TodoList";
 import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
@@ -36,9 +36,9 @@ function App() {
     const todoLists = useSelector<RootStateType, TodoListType[]>(state => state.todolists)
     let dispatch = useDispatch()
 
-    const addTodoList = (title: string) => {
+    const addTodoList = useCallback((title: string) => {
         dispatch(AddTodolistAC(title))
-    }
+    },[dispatch])
 
     const todoListComponents = todoLists.map(tl => {
         return (
