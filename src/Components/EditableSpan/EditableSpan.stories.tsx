@@ -22,6 +22,6 @@ const Template: ComponentStory<typeof EditableSpan> = (args) => <EditableSpan {.
 
 export const EditableSpanExample = Template.bind({});
 EditableSpanExample.args = {
-  title: 'HTML',
-  setNewTitle: action('value EditableSpan changed')
+  value: 'HTML',
+  onChange: action('value EditableSpan changed')
 }
