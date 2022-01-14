@@ -31,17 +31,21 @@ test("remove todolist", () => {
 })
 test("add todolist", () => {
     const newTitle = 'what to eat'
-    const action = addTodolistAC(newTitle)
+    const action = addTodolistAC({
+        id: "any id",
+        title: newTitle,
+        order: 0,
+        addedDate: ""
+    })
 
     const endValue = todolistsReducer(startValue, action)
 
     expect(endValue.length).toBe(3)
-    expect(endValue[2].title).toBe('what to eat')
-    expect(endValue[2].filter).toBe('all')
+    expect(endValue[0].title).toBe('what to eat')
 })
 test("change todolist title", () => {
     const title = 'work tasks'
-    const action = changeTodolistTitleAC(title, todoListId_2)
+    const action = changeTodolistTitleAC(todoListId_2, title)
 
     const endValue = todolistsReducer(startValue, action)
 
