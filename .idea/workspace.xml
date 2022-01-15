@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="fix: app import in index">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="21Uvgm8C8ubwlG8VnJq8UgHDaU9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/state" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Vlad\git\todo\TO_DO\src\state" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\Components\EditableSpan" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\Components\TodoList" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\Components\AddItemForm" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Vlad\git\todo\TO_DO\src\features\TodoList" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\features" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\App" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\Components\TodoList" />
+      <recent name="C:\Vlad\git\todo\TO_DO\src\state" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.test reducer">
+    <configuration name="change Task title" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/tests/tasks_reducer_tests/tasksReducer.test.ts" />
+      <test-names>
+        <test-name value="change Task title" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="remove task from todolist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/tests/tasks_reducer_tests/tasksReducer.test.ts" />
+      <test-names>
+        <test-name value="remove task from todolist" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="remove todolist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/tests/todo_reducer_tests/reducer.test.ts" />
+      <test-names>
+        <test-name value="remove todolist" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="test reducer" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/tests/reducer.test.ts" />
+      <test-names>
+        <test-name value="test reducer" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="Jest.test reducer" />
+        <item itemvalue="Jest.remove todolist" />
+        <item itemvalue="Jest.remove task from todolist" />
+        <item itemvalue="Jest.change Task title" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Vlad\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="" />
+      <created>1638008595873</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638008595873</updated>
+      <workItem from="1638008599085" duration="13957000" />
+      <workItem from="1638032497590" duration="200000" />
+      <workItem from="1638206442297" duration="6475000" />
+      <workItem from="1638261398834" duration="4000" />
+      <workItem from="1638264907646" duration="7000" />
+      <workItem from="1638285054838" duration="5043000" />
+      <workItem from="1638342698277" duration="619000" />
+      <workItem from="1638429559562" duration="3818000" />
+      <workItem from="1638623225732" duration="2688000" />
+      <workItem from="1638649228251" duration="2192000" />
+      <workItem from="1638660011779" duration="3000" />
+      <workItem from="1638708758275" duration="7862000" />
+      <workItem from="1638979043736" duration="9077000" />
+      <workItem from="1639067412313" duration="26000" />
+      <workItem from="1639580669127" duration="14937000" />
+      <workItem from="1639644047227" duration="72000" />
+      <workItem from="1639907703977" duration="3583000" />
+      <workItem from="1640185629958" duration="12445000" />
+      <workItem from="1640618591131" duration="878000" />
+      <workItem from="1640683754119" duration="650000" />
+      <workItem from="1640693113699" duration="154000" />
+      <workItem from="1640790283940" duration="7707000" />
+      <workItem from="1640801090991" duration="6121000" />
+      <workItem from="1640808534867" duration="7156000" />
+      <workItem from="1640850837641" duration="11000" />
+      <workItem from="1641073499310" duration="107000" />
+      <workItem from="1641200972715" duration="21000" />
+      <workItem from="1641484544998" duration="9885000" />
+      <workItem from="1641739279430" duration="27000" />
+      <workItem from="1642086485265" duration="349000" />
+      <workItem from="1642147207921" duration="13927000" />
+      <workItem from="1642162985019" duration="410000" />
+      <workItem from="1642163412573" duration="10000" />
+      <workItem from="1642164595186" duration="35000" />
+      <workItem from="1642164659290" duration="3251000" />
+      <workItem from="1642167967787" duration="169000" />
+      <workItem from="1642168224705" duration="9873000" />
+      <workItem from="1642184444496" duration="12965000" />
+      <workItem from="1642244731062" duration="5360000" />
+      <workItem from="1642250787702" duration="3359000" />
+      <workItem from="1642254795966" duration="2332000" />
+      <workItem from="1642259630664" duration="545000" />
+    </task>
+    <task id="LOCAL-00071" summary="fix: return old tasksReducer logic">
+      <created>1640197672011</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1640197672012</updated>
+    </task>
+    <task id="LOCAL-00072" summary="feat: use useSelector in Task">
+      <created>1640200453417</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1640200453417</updated>
+    </task>
+    <task id="LOCAL-00073" summary="install gh-pages">
+      <created>1640683893266</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1640683893266</updated>
+    </task>
+    <task id="LOCAL-00074" summary="install storybook">
+      <created>1640793889854</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1640793889855</updated>
+    </task>
+    <task id="LOCAL-00075" summary="update react 17.0.2">
+      <created>1640794553343</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1640794553343</updated>
+    </task>
+    <task id="LOCAL-00076" summary="reinstall project without react 17.0.2 and update to 17.0.2">
+      <created>1640808917248</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1640808917248</updated>
+    </task>
+    <task id="LOCAL-00077" summary="reinstall project without react 17.0.2 and update to 17.0.2">
+      <created>1640808924856</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1640808924856</updated>
+    </task>
+    <task id="LOCAL-00078" summary="reinstall storybook">
+      <created>1640811415223</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1640811415223</updated>
+    </task>
+    <task id="LOCAL-00079" summary="install snapshot">
+      <created>1640815936839</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1640815936839</updated>
+    </task>
+    <task id="LOCAL-00080" summary="feat: add AddItemForm stories">
+      <created>1640815961525</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1640815961525</updated>
+    </task>
+    <task id="LOCAL-00081" summary="feat: add App stories">
+      <created>1640815972377</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1640815972377</updated>
+    </task>
+    <task id="LOCAL-00082" summary="feat: add EditableSpan stories">
+      <created>1640815981629</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1640815981629</updated>
+    </task>
+    <task id="LOCAL-00083" summary="feat: add Task stories">
+      <created>1640815991433</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1640815991433</updated>
+    </task>
+    <task id="LOCAL-00084" summary="feat: add stories Provider decorator and fake reducers">
+      <created>1640816028808</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816028808</updated>
+    </task>
+    <task id="LOCAL-00085" summary="feat: add snapshot-testing options">
+      <created>1640816067628</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816067628</updated>
+    </task>
+    <task id="LOCAL-00086" summary="feat: add jest config">
+      <created>1640816082991</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816082991</updated>
+    </task>
+    <task id="LOCAL-00087" summary="feat: add snapshot-integration test for AddItemForm">
+      <created>1640816145178</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816145178</updated>
+    </task>
+    <task id="LOCAL-00088" summary="feat: get snapshot AddItemForm test screen">
+      <created>1640816209312</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816209312</updated>
+    </task>
+    <task id="LOCAL-00089" summary="reinstall gh-pages">
+      <created>1640816285769</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816285769</updated>
+    </task>
+    <task id="LOCAL-00090" summary="feat: add gh-pages deploy scripts">
+      <created>1640816348343</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1640816348343</updated>
+    </task>
+    <task id="LOCAL-00091" summary="install axios">
+      <created>1641485681429</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1641485681430</updated>
+    </task>
+    <task id="LOCAL-00092" summary="feat: create todolist api stories">
+      <created>1641485714084</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1641485714084</updated>
+    </task>
+    <task id="LOCAL-00093" summary="feat: create todolist api dal file">
+      <created>1641491102309</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1641491102309</updated>
+    </task>
+    <task id="LOCAL-00094" summary="feat: create instance, types, types&lt;&gt; for Todo api">
+      <created>1641496231158</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1641496231158</updated>
+    </task>
+    <task id="LOCAL-00095" summary="ref: refactor requests with Todo api methods">
+      <created>1641496271215</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1641496271215</updated>
+    </task>
+    <task id="LOCAL-00096" summary="ref: editable span">
+      <created>1642191251625</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191251626</updated>
+    </task>
+    <task id="LOCAL-00097" summary="ref: editable span">
+      <created>1642191267833</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191267833</updated>
+    </task>
+    <task id="LOCAL-00098" summary="ref: AddItemForm">
+      <created>1642191347771</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191347771</updated>
+    </task>
+    <task id="LOCAL-00099" summary="rem: old files">
+      <created>1642191383495</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191383495</updated>
+    </task>
+    <task id="LOCAL-00100" summary="reinstall yarn.lock">
+      <created>1642191411445</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191411445</updated>
+    </task>
+    <task id="LOCAL-00101" summary="ref: todolist structure">
+      <created>1642191471670</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191471670</updated>
+    </task>
+    <task id="LOCAL-00102" summary="ref: app structure, improve thunk dispatch">
+      <created>1642191576020</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191576020</updated>
+    </task>
+    <task id="LOCAL-00103" summary="add redux-thunk">
+      <created>1642191661965</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191661965</updated>
+    </task>
+    <task id="LOCAL-00104" summary="ref: index">
+      <created>1642191716200</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191716200</updated>
+    </task>
+    <task id="LOCAL-00105" summary="ref: Task structure">
+      <created>1642191780545</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191780545</updated>
+    </task>
+    <task id="LOCAL-00106" summary="ref: tests">
+      <created>1642191863347</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191863347</updated>
+    </task>
+    <task id="LOCAL-00107" summary="ref: store decorator for Storybook stories">
+      <created>1642191927378</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191927378</updated>
+    </task>
+    <task id="LOCAL-00108" summary="ref: todolists api stories for Storybook">
+      <created>1642191978333</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1642191978333</updated>
+    </task>
+    <task id="LOCAL-00109" summary="ref: API">
+      <created>1642192049030</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1642192049030</updated>
+    </task>
+    <task id="LOCAL-00110" summary="ref: reducers">
+      <created>1642192094404</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1642192094404</updated>
+    </task>
+    <task id="LOCAL-00111" summary="fix: tests">
+      <created>1642203020243</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1642203020243</updated>
+    </task>
+    <task id="LOCAL-00112" summary="upd: update todolists reducer with thunk creators">
+      <created>1642203075049</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1642203075049</updated>
+    </task>
+    <task id="LOCAL-00113" summary="feat: add type for update task thunk creator and update task reducer code">
+      <created>1642203146996</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1642203146996</updated>
+    </task>
+    <task id="LOCAL-00114" summary="feat: add dispatch thunk creators with out dispatch action creators">
+      <created>1642203259646</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1642203259646</updated>
+    </task>
+    <task id="LOCAL-00115" summary="fix tests">
+      <created>1642253290729</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253290730</updated>
+    </task>
+    <task id="LOCAL-00116" summary="ref: todolists reducer refactor">
+      <created>1642253312297</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253312298</updated>
+    </task>
+    <task id="LOCAL-00117" summary="ref: tasks reducer refactor">
+      <created>1642253328805</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253328805</updated>
+    </task>
+    <task id="LOCAL-00118" summary="ref: file structure, move files">
+      <created>1642253377319</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253377319</updated>
+    </task>
+    <task id="LOCAL-00119" summary="fix: app import in index">
+      <created>1642253395530</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253395530</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: create instance, types, types&lt;&gt; for Todo api" />
+    <MESSAGE value="ref: refactor requests with Todo api methods" />
+    <MESSAGE value="ref: editable span" />
+    <MESSAGE value="ref: AddItemForm" />
+    <MESSAGE value="rem: old files" />
+    <MESSAGE value="reinstall yarn.lock" />
+    <MESSAGE value="ref: todolist structure" />
+    <MESSAGE value="ref: app structure, improve thunk dispatch" />
+    <MESSAGE value="add redux-thunk" />
+    <MESSAGE value="ref: index" />
+    <MESSAGE value="ref: Task structure" />
+    <MESSAGE value="ref: tests" />
+    <MESSAGE value="ref: store decorator for Storybook stories" />
+    <MESSAGE value="ref: todolists api stories for Storybook" />
+    <MESSAGE value="ref: API" />
+    <MESSAGE value="ref: reducers" />
+    <MESSAGE value="fix: tests" />
+    <MESSAGE value="upd: update todolists reducer with thunk creators" />
+    <MESSAGE value="feat: add type for update task thunk creator and update task reducer code" />
+    <MESSAGE value="feat: add dispatch thunk creators with out dispatch action creators" />
+    <MESSAGE value="fix tests" />
+    <MESSAGE value="ref: todolists reducer refactor" />
+    <MESSAGE value="ref: tasks reducer refactor" />
+    <MESSAGE value="ref: file structure, move files" />
+    <MESSAGE value="fix: app import in index" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: app import in index" />
+  </component>
+</project>
