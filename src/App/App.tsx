@@ -8,15 +8,15 @@ import {
     setTodolists,
     TodolistDomainType,
     updateTodolistTitle
-} from './state/todolists-reducer'
-import {addTaskTC, removeTaskTC, updateTask} from './state/tasks-reducer';
+} from '../state/todolists-reducer'
+import {addTaskTC, removeTaskTC, updateTask} from '../state/tasks-reducer';
 import {useDispatch, useSelector} from 'react-redux';
-import {TaskStatuses, TaskType} from './api/todolists-api'
-import {AppRootStateType} from "./state/store";
+import {TaskStatuses, TaskType} from '../api/todolists-api'
+import {AppRootStateType} from "../state/store";
 import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
-import {AddItemForm} from "./Components/AddItemForm/AddItemForm";
-import {Todolist} from './Components/TodoList/Todolist';
+import {AddItemForm} from "../Components/AddItemForm/AddItemForm";
+import {Todolist} from '../features/TodoList/Todolist';
 
 export type TasksStateType = {
     [key: string]: Array<TaskType>

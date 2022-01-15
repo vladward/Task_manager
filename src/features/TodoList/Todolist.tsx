@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect} from 'react'
 import {TaskStatuses, TaskType} from "../../api/todolists-api";
 import {FilterValuesType} from "../../state/todolists-reducer";
-import {EditableSpan} from "../EditableSpan/EditableSpan";
+import {EditableSpan} from "../../Components/EditableSpan/EditableSpan";
 import {Button, IconButton} from "@material-ui/core";
 import {Delete} from "@material-ui/icons";
-import {AddItemForm} from "../AddItemForm/AddItemForm";
-import {Task} from "../../Task/Task";
+import {AddItemForm} from "../../Components/AddItemForm/AddItemForm";
+import {Task} from "./Task/Task";
 import {setTasks} from "../../state/tasks-reducer";
 import {useDispatch} from "react-redux";
 
