@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="fix: app import in index">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="21Uvgm8C8ubwlG8VnJq8UgHDaU9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,7 +45,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/state" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -201,14 +200,7 @@
       <workItem from="1642244731062" duration="5360000" />
       <workItem from="1642250787702" duration="3359000" />
       <workItem from="1642254795966" duration="2332000" />
-      <workItem from="1642259630664" duration="545000" />
-    </task>
-    <task id="LOCAL-00071" summary="fix: return old tasksReducer logic">
-      <created>1640197672011</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1640197672012</updated>
+      <workItem from="1642259630664" duration="1167000" />
     </task>
     <task id="LOCAL-00072" summary="feat: use useSelector in Task">
       <created>1640200453417</created>
@@ -546,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642253395530</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="was added idea files">
+      <created>1642260207321</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1642260207322</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +564,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: create instance, types, types&lt;&gt; for Todo api" />
     <MESSAGE value="ref: refactor requests with Todo api methods" />
     <MESSAGE value="ref: editable span" />
     <MESSAGE value="ref: AddItemForm" />
@@ -590,6 +588,7 @@
     <MESSAGE value="ref: tasks reducer refactor" />
     <MESSAGE value="ref: file structure, move files" />
     <MESSAGE value="fix: app import in index" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: app import in index" />
+    <MESSAGE value="was added idea files" />
+    <option name="LAST_COMMIT_MESSAGE" value="was added idea files" />
   </component>
 </project>
