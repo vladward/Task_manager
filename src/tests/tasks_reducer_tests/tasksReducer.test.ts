@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {TasksStateType} from "../../App";
+import {TasksStateType} from "../../App/App";
 import {addTaskAC, removeTaskAC, tasksReducer, updateTaskAC} from "../../state/tasks-reducer";
 import {addTodolistAC, removeTodolistAC} from "../../state/todolists-reducer";
 import {TaskPriorities, TaskStatuses} from "../../api/todolists-api";
@@ -35,13 +35,13 @@ test('remove task from todolist', () => {
     const todoListId_1 = v1()
     const todoListId_2 = v1()
 
-    const ID = startState[todoListId_2][1].id
+    let id = [todoListId_2][1]
+    const endState = tasksReducer(startState, removeTaskAC('1', todoListId_2))
 
-    const endState = tasksReducer(startState, removeTaskAC(ID, todoListId_2))
-
-    expect(endState[todoListId_2][1].title).toBe("Cheese")
-    expect(endState[todoListId_2].length).toBe(3)
-    expect(endState[todoListId_1].length).toBe(4)
+    expect(endState[todoListId_2][0].title).toBe("milk")
+    expect(endState[todoListId_2].length).toBe(2)
+    expect(endState[todoListId_1].length).toBe(3)
+    console.log(endState)
 })
 
 test('add task to todolist', () => {
