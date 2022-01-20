@@ -13,10 +13,21 @@ import {addTaskTC, removeTaskTC, updateTask} from '../state/tasks-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {TaskStatuses, TaskType} from '../api/todolists-api'
 import {AppRootStateType} from "../state/store";
-import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@material-ui/core";
+import {
+    AppBar,
+    Button,
+    Container,
+    Grid,
+    IconButton,
+    LinearProgress,
+    Paper,
+    Toolbar,
+    Typography
+} from "@material-ui/core";
 import {Menu} from "@material-ui/icons";
 import {AddItemForm} from "../Components/AddItemForm/AddItemForm";
 import {Todolist} from '../features/TodoList/Todolist';
+import {RequestStatusType} from "./appReducer";
 
 export type TasksStateType = {
     [key: string]: Array<TaskType>
@@ -25,6 +36,8 @@ export type TasksStateType = {
 function App() {
     const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists)
     const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
+    const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -75,6 +88,7 @@ function App() {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
+                {status === 'loading' && <LinearProgress color="secondary"/>}
             </AppBar>
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
