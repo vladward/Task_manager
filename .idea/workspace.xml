@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="fix: app import in index">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="fix: app import in index" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -201,6 +199,7 @@
       <workItem from="1642250787702" duration="3359000" />
       <workItem from="1642254795966" duration="2332000" />
       <workItem from="1642259630664" duration="1167000" />
+      <workItem from="1642261154537" duration="1857000" />
     </task>
     <task id="LOCAL-00072" summary="feat: use useSelector in Task">
       <created>1640200453417</created>
