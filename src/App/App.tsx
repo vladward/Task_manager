@@ -34,6 +34,7 @@ function App() {
                 </Toolbar>
                 {status === 'loading' && <LinearProgress color="secondary"/>}
             </AppBar>
+            <ErrorSnackbar/>
             <Container fixed>
                 <TodolistsList/>
             </Container>
