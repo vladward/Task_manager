@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="feat: add app reducer">
+    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="feat: add mui component LinearProgress(loader) and take app state in reducer">
+      <change afterPath="$PROJECT_DIR$/src/Components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/appReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/appReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodoList/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodoList/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/todo_reducer_tests/reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/todo_reducer_tests/reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/todolistsTasksReducer/todolistsTasksReducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/todolistsTasksReducer/todolistsTasksReducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -44,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/App" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/features/TodolistList" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
@@ -53,11 +68,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Vlad\git\todo\todo-from-git\TO_DO\src\features\TodolistList" />
       <recent name="C:\Vlad\git\todo\todo-from-git\TO_DO\src\App" />
       <recent name="C:\Vlad\git\todo\TO_DO\src\state" />
       <recent name="C:\Vlad\git\todo\TO_DO\src" />
       <recent name="C:\Vlad\git\todo\TO_DO\src\Components\EditableSpan" />
-      <recent name="C:\Vlad\git\todo\TO_DO\src\Components\TodoList" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Vlad\git\todo\TO_DO\src\features\TodoList" />
@@ -204,14 +219,9 @@
       <workItem from="1642254795966" duration="2332000" />
       <workItem from="1642259630664" duration="1167000" />
       <workItem from="1642261154537" duration="1857000" />
-      <workItem from="1642706414992" duration="330000" />
-    </task>
-    <task id="LOCAL-00073" summary="install gh-pages">
-      <created>1640683893266</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1640683893266</updated>
+      <workItem from="1642706414992" duration="576000" />
+      <workItem from="1642759964150" duration="12482000" />
+      <workItem from="1642785525880" duration="2276000" />
     </task>
     <task id="LOCAL-00074" summary="install storybook">
       <created>1640793889854</created>
@@ -549,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642706481642</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="feat: add mui component LinearProgress(loader) and take app state in reducer">
+      <created>1642706815498</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1642706815498</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +585,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ref: editable span" />
     <MESSAGE value="ref: AddItemForm" />
     <MESSAGE value="rem: old files" />
     <MESSAGE value="reinstall yarn.lock" />
@@ -593,6 +609,7 @@
     <MESSAGE value="fix: app import in index" />
     <MESSAGE value="was added idea files" />
     <MESSAGE value="feat: add app reducer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add app reducer" />
+    <MESSAGE value="feat: add mui component LinearProgress(loader) and take app state in reducer" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add mui component LinearProgress(loader) and take app state in reducer" />
   </component>
 </project>
