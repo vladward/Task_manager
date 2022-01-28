@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="fix Storybook decorator types">
+    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="feat: create Login component">
+      <change afterPath="$PROJECT_DIR$/src/features/Error404Page/Error404Page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/Login/authReducer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/appReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/appReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/error-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,20 +221,7 @@
       <workItem from="1642785525880" duration="2923000" />
       <workItem from="1642945772946" duration="20000" />
       <workItem from="1643298265325" duration="16000" />
-    </task>
-    <task id="LOCAL-00084" summary="feat: add stories Provider decorator and fake reducers">
-      <created>1640816028808</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816028808</updated>
-    </task>
-    <task id="LOCAL-00085" summary="feat: add snapshot-testing options">
-      <created>1640816067628</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816067628</updated>
+      <workItem from="1643357852064" duration="19722000" />
     </task>
     <task id="LOCAL-00086" summary="feat: add jest config">
       <created>1640816082991</created>
@@ -552,7 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642788483937</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="install react-router-dom">
+      <created>1643357969117</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1643357969117</updated>
+    </task>
+    <task id="LOCAL-00134" summary="feat: create Login component">
+      <created>1643358061126</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1643358061126</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,8 +585,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ref: store decorator for Storybook stories" />
-    <MESSAGE value="ref: todolists api stories for Storybook" />
     <MESSAGE value="ref: API" />
     <MESSAGE value="ref: reducers" />
     <MESSAGE value="fix: tests" />
@@ -596,6 +608,8 @@
     <MESSAGE value="feat: added utils to reduce repetitive code" />
     <MESSAGE value="fix tests" />
     <MESSAGE value="fix Storybook decorator types" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix Storybook decorator types" />
+    <MESSAGE value="install react-router-dom&#10;install formik" />
+    <MESSAGE value="feat: create Login component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create Login component" />
   </component>
 </project>

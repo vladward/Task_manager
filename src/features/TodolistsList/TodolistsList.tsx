@@ -15,15 +15,25 @@ import {Todolist} from "../TodoList/Todolist";
 import {addTaskTC, removeTaskTC, updateTask} from "../../state/tasks-reducer";
 import { TaskStatuses } from '../../api/todolists-api'
 import {createTodolist, setTodolists, updateTodolistTitle} from "../../state/todolists-reducer";
+import {Navigate} from "react-router-dom";
 
-export const TodolistsList: React.FC = () => {
+type PropsType = {
+    demo?: boolean
+}
 
-    const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists)
-    const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
+
+export const TodolistsList: React.FC<PropsType> = ({demo = false}) => {
 
     const dispatch = useDispatch()
+    const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists)
+
+    const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
+    const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.auth.isLoggedIn)
 
     useEffect(() => {
+        if (demo || !isLoggedIn) {
+            return;
+        }
         const thunk = setTodolists()
         dispatch(thunk)
     }, [])
@@ -68,6 +78,9 @@ export const TodolistsList: React.FC = () => {
         dispatch(thunk)
     }, [dispatch])
 
+    if (!isLoggedIn) {
+        return <Navigate to="/login"/>
+    }
 
     return <>
         <Grid container style={{padding: '20px'}}>
@@ -93,6 +106,7 @@ export const TodolistsList: React.FC = () => {
                                 removeTodolist={removeTodolist}
                                 changeTaskTitle={changeTaskTitle}
                                 changeTodolistTitle={changeTodolistTitle}
+                                demo={demo}
                             />
                         </Paper>
                     </Grid>
