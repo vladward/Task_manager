@@ -23,4 +23,4 @@ export const handleSetLoadingAndBlock = (dispatch: ErrorUtilsDispatchType, todoI
     dispatch(changeTodolistEntityStatusAC(todoId, 'loading'))
 }
 
-type ErrorUtilsDispatchType = Dispatch<SetAppErrorActionType | SetAppStatusActionType | ChangeTodolistsEntityStatusType>
+export type ErrorUtilsDispatchType = Dispatch<SetAppErrorActionType | SetAppStatusActionType | ChangeTodolistsEntityStatusType>
