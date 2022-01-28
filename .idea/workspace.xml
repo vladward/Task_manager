@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="feat: add mui component LinearProgress(loader) and take app state in reducer">
-      <change afterPath="$PROJECT_DIR$/src/Components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
+    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="fix Storybook decorator types">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/appReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/appReducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodoList/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodoList/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/decorators/ReduxStoreProviderDecorator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/todo_reducer_tests/reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/todo_reducer_tests/reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/todolistsTasksReducer/todolistsTasksReducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/todolistsTasksReducer/todolistsTasksReducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,77 +205,9 @@
       <workItem from="1642261154537" duration="1857000" />
       <workItem from="1642706414992" duration="576000" />
       <workItem from="1642759964150" duration="12482000" />
-      <workItem from="1642785525880" duration="2276000" />
-    </task>
-    <task id="LOCAL-00074" summary="install storybook">
-      <created>1640793889854</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1640793889855</updated>
-    </task>
-    <task id="LOCAL-00075" summary="update react 17.0.2">
-      <created>1640794553343</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1640794553343</updated>
-    </task>
-    <task id="LOCAL-00076" summary="reinstall project without react 17.0.2 and update to 17.0.2">
-      <created>1640808917248</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1640808917248</updated>
-    </task>
-    <task id="LOCAL-00077" summary="reinstall project without react 17.0.2 and update to 17.0.2">
-      <created>1640808924856</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1640808924856</updated>
-    </task>
-    <task id="LOCAL-00078" summary="reinstall storybook">
-      <created>1640811415223</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1640811415223</updated>
-    </task>
-    <task id="LOCAL-00079" summary="install snapshot">
-      <created>1640815936839</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1640815936839</updated>
-    </task>
-    <task id="LOCAL-00080" summary="feat: add AddItemForm stories">
-      <created>1640815961525</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1640815961525</updated>
-    </task>
-    <task id="LOCAL-00081" summary="feat: add App stories">
-      <created>1640815972377</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1640815972377</updated>
-    </task>
-    <task id="LOCAL-00082" summary="feat: add EditableSpan stories">
-      <created>1640815981629</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1640815981629</updated>
-    </task>
-    <task id="LOCAL-00083" summary="feat: add Task stories">
-      <created>1640815991433</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1640815991433</updated>
+      <workItem from="1642785525880" duration="2923000" />
+      <workItem from="1642945772946" duration="20000" />
+      <workItem from="1643298265325" duration="16000" />
     </task>
     <task id="LOCAL-00084" summary="feat: add stories Provider decorator and fake reducers">
       <created>1640816028808</created>
@@ -566,7 +482,77 @@
       <option name="project" value="LOCAL" />
       <updated>1642706815498</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="migrate mui to 5.0 version">
+      <created>1642787986435</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1642787986435</updated>
+    </task>
+    <task id="LOCAL-00124" summary="feat: create TodolistList component">
+      <created>1642788025111</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788025111</updated>
+    </task>
+    <task id="LOCAL-00125" summary="fix: useSelector syntax change and take out Todo mapping">
+      <created>1642788142268</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788142268</updated>
+    </task>
+    <task id="LOCAL-00126" summary="feat: create and take ErrorSnackbar component">
+      <created>1642788165559</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788165559</updated>
+    </task>
+    <task id="LOCAL-00127" summary="feat: add condition for disable components">
+      <created>1642788227555</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788227555</updated>
+    </task>
+    <task id="LOCAL-00128" summary="feat: added error checks in task-thunks and their handlers">
+      <created>1642788325208</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788325208</updated>
+    </task>
+    <task id="LOCAL-00129" summary="feat: added error checks in todo-thunks and their handlers">
+      <created>1642788352930</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788352930</updated>
+    </task>
+    <task id="LOCAL-00130" summary="feat: added utils to reduce repetitive code">
+      <created>1642788412559</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788412559</updated>
+    </task>
+    <task id="LOCAL-00131" summary="fix tests">
+      <created>1642788458631</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788458631</updated>
+    </task>
+    <task id="LOCAL-00132" summary="fix Storybook decorator types">
+      <created>1642788483937</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1642788483937</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,15 +571,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ref: AddItemForm" />
-    <MESSAGE value="rem: old files" />
-    <MESSAGE value="reinstall yarn.lock" />
-    <MESSAGE value="ref: todolist structure" />
-    <MESSAGE value="ref: app structure, improve thunk dispatch" />
-    <MESSAGE value="add redux-thunk" />
-    <MESSAGE value="ref: index" />
-    <MESSAGE value="ref: Task structure" />
-    <MESSAGE value="ref: tests" />
     <MESSAGE value="ref: store decorator for Storybook stories" />
     <MESSAGE value="ref: todolists api stories for Storybook" />
     <MESSAGE value="ref: API" />
@@ -602,7 +579,6 @@
     <MESSAGE value="upd: update todolists reducer with thunk creators" />
     <MESSAGE value="feat: add type for update task thunk creator and update task reducer code" />
     <MESSAGE value="feat: add dispatch thunk creators with out dispatch action creators" />
-    <MESSAGE value="fix tests" />
     <MESSAGE value="ref: todolists reducer refactor" />
     <MESSAGE value="ref: tasks reducer refactor" />
     <MESSAGE value="ref: file structure, move files" />
@@ -610,6 +586,16 @@
     <MESSAGE value="was added idea files" />
     <MESSAGE value="feat: add app reducer" />
     <MESSAGE value="feat: add mui component LinearProgress(loader) and take app state in reducer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add mui component LinearProgress(loader) and take app state in reducer" />
+    <MESSAGE value="migrate mui to 5.0 version" />
+    <MESSAGE value="feat: create TodolistList component" />
+    <MESSAGE value="fix: useSelector syntax change and take out Todo mapping" />
+    <MESSAGE value="feat: create and take ErrorSnackbar component" />
+    <MESSAGE value="feat: add condition for disable components" />
+    <MESSAGE value="feat: added error checks in task-thunks and their handlers" />
+    <MESSAGE value="feat: added error checks in todo-thunks and their handlers" />
+    <MESSAGE value="feat: added utils to reduce repetitive code" />
+    <MESSAGE value="fix tests" />
+    <MESSAGE value="fix Storybook decorator types" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Storybook decorator types" />
   </component>
 </project>
