@@ -6,8 +6,6 @@ import {Button, IconButton} from "@material-ui/core";
 import {Delete} from "@material-ui/icons";
 import {AddItemForm} from "../../Components/AddItemForm/AddItemForm";
 import {Task} from "./Task/Task";
-import {setTasks} from "../../state/tasks-reducer";
-import {useDispatch} from "react-redux";
 import {RequestStatusType} from "../../App/appReducer";
 
 
@@ -28,13 +26,11 @@ type PropsType = {
 }
 
 export const Todolist = React.memo(function ({demo = false, ...props}: PropsType) {
-    const dispatch = useDispatch()
 
     useEffect(() => {
-        if(demo) {
+        if (demo) {
             return
         }
-        dispatch(setTasks(props.id))
     }, [demo])
 
     const addTask = useCallback((title: string) => {
