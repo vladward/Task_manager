@@ -52,14 +52,20 @@ export const App =({demo = false}: PropsType) => {
     return (
         <div className="App">
             <AppBar position="static">
-                <Toolbar>
-                    <IconButton edge="start" color="inherit" aria-label="menu">
+                <Toolbar className={s.header}>
+
+                    <div className={s.headerLeft}>
+                        <IconButton edge="start" color="inherit" aria-label="menu">
                         <Menu/>
                     </IconButton>
-                    <Typography variant="h6">
-                        News
-                    </Typography>
-                    {isLoggedIn && <Button color="inherit" onClick={handleLogout}>Log out</Button>}
+                        <Typography variant="h6">
+                            News
+                        </Typography>
+                    </div>
+                    {isLoggedIn && <div className={s.headerRight}>
+                        <Button color="inherit" onClick={handleLogout}>Log out</Button>
+                    </div>}
+
                 </Toolbar>
                 {status === 'loading' && <LinearProgress color="secondary"/>}
             </AppBar>

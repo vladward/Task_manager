@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="feat: create Login component">
-      <change afterPath="$PROJECT_DIR$/src/features/Error404Page/Error404Page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Login/authReducer.tsx" afterDir="false" />
+    <list default="true" id="9f2aae6e-3861-4b96-929e-893e786f60a0" name="Default Changelist" comment="feat: add initialized and logged checks, routes, logout ability, loader&#10;ref: app to arrow function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/appReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/appReducer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Login/authReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/authReducer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodoList/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/error-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,77 +217,8 @@
       <workItem from="1642785525880" duration="2923000" />
       <workItem from="1642945772946" duration="20000" />
       <workItem from="1643298265325" duration="16000" />
-      <workItem from="1643357852064" duration="19722000" />
-    </task>
-    <task id="LOCAL-00086" summary="feat: add jest config">
-      <created>1640816082991</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816082991</updated>
-    </task>
-    <task id="LOCAL-00087" summary="feat: add snapshot-integration test for AddItemForm">
-      <created>1640816145178</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816145178</updated>
-    </task>
-    <task id="LOCAL-00088" summary="feat: get snapshot AddItemForm test screen">
-      <created>1640816209312</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816209312</updated>
-    </task>
-    <task id="LOCAL-00089" summary="reinstall gh-pages">
-      <created>1640816285769</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816285769</updated>
-    </task>
-    <task id="LOCAL-00090" summary="feat: add gh-pages deploy scripts">
-      <created>1640816348343</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1640816348343</updated>
-    </task>
-    <task id="LOCAL-00091" summary="install axios">
-      <created>1641485681429</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1641485681430</updated>
-    </task>
-    <task id="LOCAL-00092" summary="feat: create todolist api stories">
-      <created>1641485714084</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1641485714084</updated>
-    </task>
-    <task id="LOCAL-00093" summary="feat: create todolist api dal file">
-      <created>1641491102309</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1641491102309</updated>
-    </task>
-    <task id="LOCAL-00094" summary="feat: create instance, types, types&lt;&gt; for Todo api">
-      <created>1641496231158</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1641496231158</updated>
-    </task>
-    <task id="LOCAL-00095" summary="ref: refactor requests with Todo api methods">
-      <created>1641496271215</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1641496271215</updated>
+      <workItem from="1643357852064" duration="20517000" />
+      <workItem from="1643462853136" duration="3733000" />
     </task>
     <task id="LOCAL-00096" summary="ref: editable span">
       <created>1642191251625</created>
@@ -566,7 +493,77 @@
       <option name="project" value="LOCAL" />
       <updated>1643358061126</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="feat: create auth reducer">
+      <created>1643382874603</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1643382874603</updated>
+    </task>
+    <task id="LOCAL-00136" summary="feat: create error 404 page">
+      <created>1643382907493</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1643382907493</updated>
+    </task>
+    <task id="LOCAL-00137" summary="feat: use browser router for wrap app">
+      <created>1643382960552</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1643382960552</updated>
+    </task>
+    <task id="LOCAL-00138" summary="feat: add fields, validate, login check to Login page">
+      <created>1643383079699</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383079699</updated>
+    </task>
+    <task id="LOCAL-00139" summary="feat: add thunk creator in app reducer for check to initialize user">
+      <created>1643383174841</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383174841</updated>
+    </task>
+    <task id="LOCAL-00140" summary="feat: create Authentication api requests and types for that">
+      <created>1643383255548</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383255548</updated>
+    </task>
+    <task id="LOCAL-00141" summary="feat: add redirect in todolists to login if user not logged in">
+      <created>1643383340839</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383340839</updated>
+    </task>
+    <task id="LOCAL-00142" summary="feat: rename app.css and add styles">
+      <created>1643383390183</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383390183</updated>
+    </task>
+    <task id="LOCAL-00143" summary="fix: minor fix">
+      <created>1643383472845</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383472845</updated>
+    </task>
+    <task id="LOCAL-00144" summary="feat: add initialized and logged checks, routes, logout ability, loader&#10;ref: app to arrow function">
+      <created>1643383625531</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1643383625531</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,16 +582,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ref: API" />
-    <MESSAGE value="ref: reducers" />
-    <MESSAGE value="fix: tests" />
-    <MESSAGE value="upd: update todolists reducer with thunk creators" />
-    <MESSAGE value="feat: add type for update task thunk creator and update task reducer code" />
-    <MESSAGE value="feat: add dispatch thunk creators with out dispatch action creators" />
-    <MESSAGE value="ref: todolists reducer refactor" />
-    <MESSAGE value="ref: tasks reducer refactor" />
-    <MESSAGE value="ref: file structure, move files" />
-    <MESSAGE value="fix: app import in index" />
     <MESSAGE value="was added idea files" />
     <MESSAGE value="feat: add app reducer" />
     <MESSAGE value="feat: add mui component LinearProgress(loader) and take app state in reducer" />
@@ -610,6 +597,16 @@
     <MESSAGE value="fix Storybook decorator types" />
     <MESSAGE value="install react-router-dom&#10;install formik" />
     <MESSAGE value="feat: create Login component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create Login component" />
+    <MESSAGE value="feat: create auth reducer" />
+    <MESSAGE value="feat: create error 404 page" />
+    <MESSAGE value="feat: use browser router for wrap app" />
+    <MESSAGE value="feat: add fields, validate, login check to Login page" />
+    <MESSAGE value="feat: add thunk creator in app reducer for check to initialize user" />
+    <MESSAGE value="feat: create Authentication api requests and types for that" />
+    <MESSAGE value="feat: add redirect in todolists to login if user not logged in" />
+    <MESSAGE value="feat: rename app.css and add styles" />
+    <MESSAGE value="fix: minor fix" />
+    <MESSAGE value="feat: add initialized and logged checks, routes, logout ability, loader&#10;ref: app to arrow function" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add initialized and logged checks, routes, logout ability, loader&#10;ref: app to arrow function" />
   </component>
 </project>
