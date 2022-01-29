@@ -1,8 +1,8 @@
-import {Dispatch} from "redux";
 import {authAPI} from "../api/todolists-api";
 import {setIsLoggedInAC} from "../features/Login/authReducer";
 import {handleServerNetworkError} from "../utils/error-utils";
 import {AxiosError} from "axios";
+import {ThunkType} from "../state/store";
 
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 
@@ -31,7 +31,7 @@ export const setAppStatusAC = (status: RequestStatusType) => ({type: "APP/SET-ST
 export const setAppErrorAC = (error: string | null) => ({type: "APP/SET-ERROR", error} as const)
 export const setIsInitializedAC = (isInitialized: boolean) => ({type: "APP/SET-INITIALIZED", isInitialized} as const)
 
-export const initializeAppTC = () => (dispatch: Dispatch) => {
+export const initializeAppTC = (): ThunkType => (dispatch) => {
     authAPI.me()
         .then(res => {
             if (res.data.resultCode === 0) {
