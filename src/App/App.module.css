@@ -1,3 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
 .paper {
   padding: 10px;
 }
