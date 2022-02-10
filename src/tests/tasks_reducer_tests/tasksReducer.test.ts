@@ -13,20 +13,32 @@ beforeEach(() => {
     todoListId_2 = v1()
     startState = {
         [todoListId_1]: [
-            { id: "1", title: "CSS", status: TaskStatuses.New, todoListId: "todolistId1", description: '',
-                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low },
-            { id: "2", title: "JS", status: TaskStatuses.Completed, todoListId: "todolistId1", description: '',
-                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low },
-            { id: "3", title: "React", status: TaskStatuses.New, todoListId: "todolistId1", description: '',
-                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low }
+            {
+                id: "1", title: "CSS", status: TaskStatuses.New, todoListId: "todolistId1", description: '',
+                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low
+            },
+            {
+                id: "2", title: "JS", status: TaskStatuses.Completed, todoListId: "todolistId1", description: '',
+                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low
+            },
+            {
+                id: "3", title: "React", status: TaskStatuses.New, todoListId: "todolistId1", description: '',
+                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low
+            }
         ],
         [todoListId_2]: [
-            { id: "1", title: "bread", status: TaskStatuses.New, todoListId: "todolistId2", description: '',
-                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low },
-            { id: "2", title: "milk", status: TaskStatuses.Completed, todoListId: "todolistId2", description: '',
-                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low },
-            { id: "3", title: "tea", status: TaskStatuses.New, todoListId: "todolistId2", description: '',
-                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low }
+            {
+                id: "1", title: "bread", status: TaskStatuses.New, todoListId: "todolistId2", description: '',
+                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low
+            },
+            {
+                id: "2", title: "milk", status: TaskStatuses.Completed, todoListId: "todolistId2", description: '',
+                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low
+            },
+            {
+                id: "3", title: "tea", status: TaskStatuses.New, todoListId: "todolistId2", description: '',
+                startDate: '', deadline: '', addedDate: '', order: 0, priority: TaskPriorities.Low
+            }
         ]
     }
 })
@@ -36,7 +48,7 @@ test('remove task from todolist', () => {
     const todoListId_2 = v1()
 
     let id = [todoListId_2][1]
-    const endState = tasksReducer(startState, removeTaskAC('1', todoListId_2))
+    const endState = tasksReducer(startState, removeTaskAC({taskId: '1', todolistId: todoListId_2}))
 
     expect(endState[todoListId_2][0].title).toBe("milk")
     expect(endState[todoListId_2].length).toBe(2)
@@ -47,16 +59,18 @@ test('remove task from todolist', () => {
 test('add task to todolist', () => {
     const title = 'WEB'
     const endState = tasksReducer(startState, addTaskAC({
-        id: '12',
-        status: TaskStatuses.Completed,
-        title,
-        description: '',
-        order: 0,
-        priority: 0,
-        startDate: '',
-        deadline: '',
-        todoListId: todoListId_1,
-        addedDate: ''
+        task: {
+            id: '12',
+            status: TaskStatuses.Completed,
+            title,
+            description: '',
+            order: 0,
+            priority: 0,
+            startDate: '',
+            deadline: '',
+            todoListId: todoListId_1,
+            addedDate: ''
+        }
     }))
 
     expect(endState[todoListId_1].length).toBe(4);
@@ -68,7 +82,14 @@ test('add task to todolist', () => {
 test('change Task Status', () => {
     const ID = startState[todoListId_1][0].id
 
-    const endState = tasksReducer(startState, updateTaskAC(ID, {status: TaskStatuses.Completed}, todoListId_1))
+    const endState = tasksReducer(startState, updateTaskAC({
+        taskId: ID,
+        model: {
+            status: TaskStatuses.Completed
+        }
+        ,
+        todolistId: todoListId_1
+    }))
 
     expect(endState[todoListId_1][0].status).toBe(TaskStatuses.Completed)
     expect(endState[todoListId_1][1].status).toBe(TaskStatuses.Completed)
@@ -79,7 +100,14 @@ test('change Task title', () => {
     const newTitle = 'Vodka'
     const ID = startState[todoListId_2][1].id
 
-    const endState = tasksReducer(startState, updateTaskAC(ID, {title: newTitle}, todoListId_2))
+    const endState = tasksReducer(startState, updateTaskAC({
+        taskId: ID,
+        model: {
+            title: newTitle
+        }
+        ,
+        todolistId: todoListId_2
+    }))
 
     expect(endState[todoListId_1][1].title).toBe("JS")
     expect(endState[todoListId_2][1].title).toBe("Vodka")
@@ -90,12 +118,14 @@ test('change Task title', () => {
 
 test('new property with new array should be added when new todolist is added', () => {
     const newTitle = 'title no matter'
-let action = addTodolistAC({
-    id: '10',
-    order: 0,
-    title: newTitle,
-    addedDate: ''
-})
+    let action = addTodolistAC({
+        todolist: {
+            id: '10',
+            order: 0,
+            title: newTitle,
+            addedDate: ''
+        }
+    })
     const endState = tasksReducer(startState, action)
 
     const keys = Object.keys(endState)
@@ -109,7 +139,7 @@ let action = addTodolistAC({
 })
 
 test('property with todolistId should be deleted', () => {
-    const endState = tasksReducer(startState, removeTodolistAC(todoListId_2))
+    const endState = tasksReducer(startState, removeTodolistAC({todolistId: todoListId_2}))
 
     const keys = Object.keys(endState)
 

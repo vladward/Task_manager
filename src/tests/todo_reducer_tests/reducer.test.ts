@@ -23,7 +23,7 @@ beforeEach(() => {
 })
 
 test("remove todolist", () => {
-    const action = removeTodolistAC(todoListId_1)
+    const action = removeTodolistAC({todolistId: todoListId_1})
     const endValue = todolistsReducer(startValue, action)
 
     expect(endValue.length).toBe(1)
@@ -31,11 +31,12 @@ test("remove todolist", () => {
 })
 test("add todolist", () => {
     const newTitle = 'what to eat'
-    const action = addTodolistAC({
-        id: "any id",
-        title: newTitle,
-        order: 0,
-        addedDate: ""
+    const action = addTodolistAC({todolist: {
+            id: "any id",
+            title: newTitle,
+            order: 0,
+            addedDate: ""
+        }
     })
 
     const endValue = todolistsReducer(startValue, action)
@@ -45,7 +46,7 @@ test("add todolist", () => {
 })
 test("change todolist title", () => {
     const title = 'work tasks'
-    const action = changeTodolistTitleAC(todoListId_2, title)
+    const action = changeTodolistTitleAC({id: todoListId_2, title})
 
     const endValue = todolistsReducer(startValue, action)
 
@@ -55,7 +56,7 @@ test("change todolist title", () => {
 })
 test("change todolist filter", () => {
     const newFilter: FilterValuesType = 'completed'
-    const action = changeTodolistFilterAC(todoListId_2, newFilter)
+    const action = changeTodolistFilterAC({id: todoListId_2, filter: newFilter})
 
     const endValue = todolistsReducer(startValue, action)
 
