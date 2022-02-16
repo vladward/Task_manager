@@ -32,7 +32,7 @@ const slice = createSlice({
 export const appReducer = slice.reducer
 export const {setIsInitializedAC, setAppStatusAC, setAppErrorAC} = slice.actions
 
-// type InitialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 //
 // export const appReducer = (state: InitialStateType = initialState, action: AppActionsType): InitialStateType => {
 //     switch (action.type) {

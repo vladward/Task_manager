@@ -74,8 +74,8 @@ const slice = createSlice({
                 tasks.splice(index, 1)
             }
         },
-        addTaskAC(state, action: PayloadAction<{ task: TaskType }>) {
-            const tasks = state[action.payload.task.todoListId].unshift(action.payload.task)
+        addTaskAC(state, action: PayloadAction<TaskType>) {
+            const tasks = state[action.payload.todoListId].unshift(action.payload)
         },
         updateTaskAC(state, action: PayloadAction<{ taskId: string, model: UpdateDomainTaskModelType, todolistId: string }>) {
             const tasks = state[action.payload.todolistId]
@@ -213,7 +213,7 @@ export const addTaskTC = (todolistId: string, title: string) => (dispatch: Dispa
                 dispatch(setAppStatusAC({status: 'succeeded'}))
                 dispatch(changeTodolistEntityStatusAC({id: todolistId, entityStatus: 'succeeded'}))
                 let task = res.data.data.item
-                dispatch(addTaskAC({task}))
+                dispatch(addTaskAC(task))
             } else {
                 handleServerAppError(res.data, dispatch)
             }
